@@ -2,12 +2,9 @@
 using System.Collections;
 
 public class SpellManager : MonoBehaviour {
-
-    public Rigidbody projectile;
-    public float speed = 20;
     float timer;
 
-    bool combo;
+    bool casting;
 
     bool canCast;
     float castingTime = 5.0f;
