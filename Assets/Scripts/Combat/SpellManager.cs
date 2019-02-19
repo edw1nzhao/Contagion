@@ -2,21 +2,16 @@
 using System.Collections;
 
 public class SpellManager : MonoBehaviour {
-    float timer;
-
-    bool casting;
-
-    bool canCast;
-    float castingTime = 5.0f;
-
+    ArrayList currentCast;
+    
     // Use this for initialization
     void Start() {
-       
+        currentCast = new ArrayList();
     }
 
     // Update is called once per frame
     void Update() {
-
+        /*
         if (Input.GetKeyDown("p")) {
             combo = true;
             GM.mgr_element.DisplayElement(Elements.Fire);
@@ -41,5 +36,6 @@ public class SpellManager : MonoBehaviour {
 
             instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
         }
+        */
     }
 }
