@@ -23,7 +23,13 @@ public class DoorOpen : MonoBehaviour
 
     private void OnMouseDown()
     {
+        int count = 0;
         anim.SetTrigger("Active");
+
+        //while (count < 10000000000000)
+        //{
+        //    count++;
+        //}
         SceneManager.LoadScene("Lab");
     }
 }
