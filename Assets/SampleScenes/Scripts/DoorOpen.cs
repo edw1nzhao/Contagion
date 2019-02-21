@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorOpen : MonoBehaviour
 {
@@ -14,9 +15,15 @@ public class DoorOpen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            anim.SetTrigger("Active");
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    anim.SetTrigger("Active");
+        //}
+    }
+
+    private void OnMouseDown()
+    {
+        anim.SetTrigger("Active");
+        SceneManager.LoadScene("Lab");
     }
 }
