@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.56676453, g: 0.61424625, b: 0.82079464, a: 1}
+  m_IndirectSpecularColor: {r: 0.5666949, g: 0.6142019, b: 0.820801, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -140,7 +140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &22545544
 PrefabInstance:
@@ -3821,58 +3821,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &764282860 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6017174912777380002, guid: f1dac9868569b03458563fff5d0f49f5,
-    type: 3}
-  m_PrefabInstance: {fileID: 6017174912164357966}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &764282861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 764282860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11ce89987420417391d75a6ab70da9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &764282862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 764282860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65941c0ff0d51c44d90722474ee5d0de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startMana: 100
-  currMaxMana: 0
-  currMana: 0
-  manaSlider: {fileID: 81370143}
-  manaText: {fileID: 888698358}
---- !u!114 &764282863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 764282860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8842fdbe98d372943985ea3236113d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startHealth: 100
-  currHealth: 0
-  currMaxHealth: 0
-  healthSlider: {fileID: 1477043483}
-  healthText: {fileID: 125368473}
 --- !u!1 &787485482
 GameObject:
   m_ObjectHideFlags: 0
@@ -6704,7 +6652,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1449534758
 MonoBehaviour:
@@ -10137,6 +10085,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4896860032537797776, guid: f1dac9868569b03458563fff5d0f49f5,
+        type: 3}
+      propertyPath: manaSlider
+      value: 
+      objectReference: {fileID: 81370143}
+    - target: {fileID: 4896860032537797776, guid: f1dac9868569b03458563fff5d0f49f5,
+        type: 3}
+      propertyPath: manaText
+      value: 
+      objectReference: {fileID: 888698358}
+    - target: {fileID: 4896860032537797777, guid: f1dac9868569b03458563fff5d0f49f5,
+        type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1477043483}
+    - target: {fileID: 4896860032537797777, guid: f1dac9868569b03458563fff5d0f49f5,
+        type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 125368473}
     m_RemovedComponents:
     - {fileID: 6017174912777380001, guid: f1dac9868569b03458563fff5d0f49f5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1dac9868569b03458563fff5d0f49f5, type: 3}
