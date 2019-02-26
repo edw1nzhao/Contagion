@@ -9,6 +9,8 @@ public class SpellManager : MonoBehaviour {
     public float castingTime = 10f;
     public Rigidbody projectile;
     public float speed = 100f;
+    public GameObject shootingRoot;
+    //public Image light;
 
     // Use this for initialization
     void Start() {
@@ -17,10 +19,15 @@ public class SpellManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
         
         if (Input.GetKeyDown("o")) {
             combo = true;
             GM.mgr_element.DisplayElement(Elements.Fire);
+        }
+        if (Input.GetKeyDown("k")) {
+            combo = true;
+            GM.mgr_element.DisplayElement(Elements.Light);
         }
 
         // if (Input.GetKeyDown("Fire1") && combo) {
@@ -38,9 +45,9 @@ public class SpellManager : MonoBehaviour {
                 timer = 0.0f;
             }
 
-            Rigidbody instantiatedProjectile = Instantiate(projectile, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.rotation) as Rigidbody;
-
-            instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
+            Rigidbody instantiatedProjectile = Instantiate(projectile, shootingRoot.transform.position, shootingRoot.transform.rotation) as Rigidbody;
+            instantiatedProjectile.AddForce(shootingRoot.transform.forward * speed);
+            //instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
         }
         
     }

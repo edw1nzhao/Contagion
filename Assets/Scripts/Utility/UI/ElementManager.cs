@@ -12,6 +12,7 @@ public class ElementManager : MonoBehaviour
     public Image eDark;
     public Image eLight;
     public Image eNull;
+    private bool lightOn = false;
 
     float time;
     public float displayTime = 0.2f;
@@ -52,6 +53,13 @@ public class ElementManager : MonoBehaviour
             case Elements.Dark:
                 break;
             case Elements.Light:
+                if(lightOn){
+                    eLight.gameObject.SetActive(false);
+                    lightOn = false;
+                } else{
+                    eLight.gameObject.SetActive(true);
+                    lightOn = true;
+                }
                 break;
             case Elements.Null:
                 break;
