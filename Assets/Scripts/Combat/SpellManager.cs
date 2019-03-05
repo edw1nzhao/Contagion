@@ -7,18 +7,28 @@ public class SpellManager : MonoBehaviour {
     private bool canCast = false;
     private float timer;
 
+
     public GameObject player;
     public float castingTime = 10f;
     public float speed = 100f;
     public float second = 1f;
 
     private PlayerMana playerMana;
+    private PlayerHealth playerHealth;
 
     // Use this for initialization
     void Start() {
         currentCast = new ArrayList();
         playerMana = player.GetComponent<PlayerMana>();
+        playerHealth = player.GetComponent<PlayerHealth>();
         GM.mgr_spells = this;
+    }
+
+    public PlayerMana getPlayerMana(){
+        return playerMana;
+    }
+    public PlayerHealth getPlayerHealth(){
+        return playerHealth;
     }
 
     // Update is called once per frame

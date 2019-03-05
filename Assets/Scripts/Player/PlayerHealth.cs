@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour {
 
 
     void Awake() {
-        currHealth = startHealth;
+        currHealth = 60;
         currMaxHealth = startHealth;
         setHealthSlider();
     }
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour {
 
     }
 
-    void setHealthSlider() {
+    public void setHealthSlider() {
         healthSlider.value = currHealth;
         healthText.text = currHealth + "/" + currMaxHealth;
     }
