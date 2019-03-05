@@ -10,44 +10,46 @@ public class PlayerMana : MonoBehaviour {
 
     public Text manaText;
 
+    float second = 1f;
+    float currTime = 0.0f;
+
     void Awake() {
+      
         // Set the initial health of the player.
         currMana = startMana;
         currMaxMana = startMana;
-        setManaSlider();
+        setManaSlider(currMaxMana);
     }
 
     void Update() {
-        if (Input.GetKeyDown("p")) {
-            castSpell(Elements.Fire);
-        } else if (Input.GetKeyDown("o")) {
-            castSpell(Elements.Water);
-        } else if (Input.GetKeyDown("i")) {
-            castSpell(Elements.Earth);
-        } else if (Input.GetKeyDown("u")) {
-            castSpell(Elements.Wind);
-        } else if (Input.GetKeyDown("l")) {
-            castSpell(Elements.Dark);
-        } else if (Input.GetKeyDown("k")) {
-            castSpell(Elements.Light);
-        } else if (Input.GetKeyDown("j")) {
-            castSpell(Elements.Null);
+
+        if (currTime > second) {
+            
+            if (GM.mgr_element.LightOn()) {
+                setManaSlider(GM.mgr_spells.castSpell(Elements.Light, currMana));
+            }
+
+            if (GM.mgr_element.DarkOn()) {
+                setManaSlider(GM.mgr_spells.castSpell(Elements.Dark, currMana));
+            }
+
+            currTime = 0;
+        } else {
+            currTime += Time.deltaTime;
         }
+
+
+
     }
+    
 
-    void castSpell(Elements e) {
-        int cost = GM.mgr_element.getElementCost(e);
-
-        if (currMana >= cost) {
-            currMana -= cost;
-            GM.mgr_element.DisplayElement(e);
-        }
-        
-        setManaSlider();
-    }
-
-    void setManaSlider() {
-        manaSlider.value = currMana;
+    public void setManaSlider(int m) {
+        currMana = m;
+        manaSlider.value = m;
         manaText.text = currMana + "/" + currMaxMana;
+    }
+
+    public int getMana() {
+        return currMana;
     }
 }

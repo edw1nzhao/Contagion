@@ -8,10 +8,10 @@ public class ElementManager : MonoBehaviour
     public Image eFire;
     public Image eWater;
     public Image eEarth;
-    public Image eWind;
     public Image eDark;
     public Image eLight;
-    public Image eNull;
+
+    private bool darkOn = false;
     private bool lightOn = false;
 
     float time;
@@ -47,19 +47,15 @@ public class ElementManager : MonoBehaviour
             case Elements.Earth:
                 eEarth.gameObject.SetActive(true);
                 break;
-            case Elements.Wind:
-                eWind.gameObject.SetActive(true);
-                break;
             case Elements.Dark:
+                darkOn = !darkOn;
+                eDark.gameObject.SetActive(darkOn);
+                Debug.Log("Toggled Dark: " + darkOn);
                 break;
             case Elements.Light:
-                if(lightOn){
-                    eLight.gameObject.SetActive(false);
-                    lightOn = false;
-                } else{
-                    eLight.gameObject.SetActive(true);
-                    lightOn = true;
-                }
+                lightOn = !lightOn;
+                eLight.gameObject.SetActive(lightOn);
+                Debug.Log("Toggled Light: " + lightOn);
                 break;
             case Elements.Null:
                 break;
@@ -68,10 +64,11 @@ public class ElementManager : MonoBehaviour
         displayIcon = true;     
     }
 
+    public bool LightOn() { return lightOn; }
+    public bool DarkOn() { return darkOn; }
+
     public int getElementCost(Elements e) {
-        if (e == Elements.Null) {
-            return Globals.nullElementCost;
-        } else if (e == Elements.Dark || e == Elements.Light) {
+        if (e == Elements.Dark || e == Elements.Light) {
             return Globals.advancedElementCost;
         }
         return Globals.baseElementCost;
@@ -81,9 +78,5 @@ public class ElementManager : MonoBehaviour
         eFire.gameObject.SetActive(false);
         eWater.gameObject.SetActive(false);
         eEarth.gameObject.SetActive(false);
-        eWind.gameObject.SetActive(false);
-        //eDark.gameObject.SetActive(false);
-        //eLight.gameObject.SetActive(false);
-        //eNull.gameObject.SetActive(false);
     }
 }

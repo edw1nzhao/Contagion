@@ -4,6 +4,6 @@ using UnityEngine;
 
 public static class Globals {
     public static int baseElementCost = 15;
-    public static int advancedElementCost = 30;
+    public static int advancedElementCost = 10;
     public static int nullElementCost = 50;
 }
