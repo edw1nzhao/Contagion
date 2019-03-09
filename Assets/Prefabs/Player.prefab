@@ -3193,6 +3193,7 @@ GameObject:
   - component: {fileID: 4896860032537797773}
   - component: {fileID: 4896860032537797772}
   - component: {fileID: 4896860032537797775}
+  - component: {fileID: 2874582692031713874}
   - component: {fileID: 4896860032537797779}
   - component: {fileID: 4896860032537797776}
   - component: {fileID: 4896860032537797777}
@@ -3217,6 +3218,7 @@ Transform:
   - {fileID: 4896860032596078494}
   - {fileID: 4896860033418353236}
   - {fileID: 4896860032185903291}
+  - {fileID: 9097749695806055875}
   m_Father: {fileID: 4896860033499923114}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3285,6 +3287,21 @@ MonoBehaviour:
   forwardSpeed: 7
   backwardSpeed: 2
   rotateSpeed: 2
+--- !u!114 &2874582692031713874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4896860032537797778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17efc8ce0c4ef8d4ca71bbc135a28ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBall: {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 3}
+  shooting_root: {fileID: 7436091503641098663}
+  speed: 100
 --- !u!114 &4896860032537797779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3297,6 +3314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11ce89987420417391d75a6ab70da9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  castingTime: 10
+  speed: 100
+  second: 1
 --- !u!114 &4896860032537797776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7038,4 +7059,34 @@ Transform:
   - {fileID: 4896860031953706921}
   m_Father: {fileID: 4896860031655567184}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7436091503641098663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9097749695806055875}
+  m_Layer: 0
+  m_Name: shooting_root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9097749695806055875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7436091503641098663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.107, z: 0.186}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4896860032537797774}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

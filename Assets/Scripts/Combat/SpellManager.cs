@@ -6,7 +6,7 @@ public class SpellManager : MonoBehaviour {
     private bool combo = false;
     private bool canCast = false;
     private float timer;
-
+    private string combination = "";
 
     public GameObject player;
     public float castingTime = 10f;
@@ -33,15 +33,23 @@ public class SpellManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKey(KeyCode.LeftShift)) {
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
             combo = true;
-        } else {
+            // reset combination
+            combination = "";
+            Debug.Log("down");
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift)){
             combo = false;
+            // reset combination
+            combination = "";
+
         }
 
         if (Input.GetKeyDown("l")) {
             playerMana.setManaSlider(castSpell(Elements.Dark, playerMana.getMana()));
             GM.mgr_element.DisplayElement(Elements.Dark);
+            
         }
 
         if (Input.GetKeyDown("k")) {
@@ -51,13 +59,19 @@ public class SpellManager : MonoBehaviour {
 
         if (combo) {
             if (Input.GetKeyDown("p")) {
-
+                combination += "F";
+                Debug.Log(combination);
                 playerMana.setManaSlider(castSpell(Elements.Fire, playerMana.getMana()));
+                GM.mgr_combats.detectCombo(combination);
+                
+                //GM.mgr_element.DisplayElement(Elements.Light);
             }
             if (Input.GetKeyDown("o")) {
+                combination += "W";
                 playerMana.setManaSlider(castSpell(Elements.Water, playerMana.getMana()));
             }
             if (Input.GetKeyDown("i")) {
+                combination += "E";
                 playerMana.setManaSlider(castSpell(Elements.Earth, playerMana.getMana()));
             }
         }
