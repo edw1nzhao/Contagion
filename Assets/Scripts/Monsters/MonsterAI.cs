@@ -24,7 +24,19 @@ public class MonsterAI : MonoBehaviour
             nav.SetDestination(dest);
             Debug.Log("player" + dest);
         }
-       
+
+        if (!nav.pathPending)
+        {
+            if (nav.remainingDistance < 1.5)
+            {
+                nav.Stop();
+
+            }
+            else {
+                nav.Resume();
+            }
+        }
+
     }
     private void FixedUpdate()
     {
