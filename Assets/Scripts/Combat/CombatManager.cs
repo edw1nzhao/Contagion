@@ -38,9 +38,11 @@ public class CombatManager : MonoBehaviour
 
     void castFireBall(){
         GameObject fireBallInstance;
+        //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
         fireBallInstance = Instantiate(fireBall, shooting_root.transform.position, shooting_root.transform.rotation) as GameObject;
-        Rigidbody fireBallInstRigidbody = fireBallInstance.GetComponent<Rigidbody>();
-        fireBallInstRigidbody.AddForce(shooting_root.transform.forward * speed); 
+
+        //Rigidbody fireBallInstRigidbody = fireBallInstance.GetComponent<Rigidbody>();
+        //fireBallInstRigidbody.AddForce(shooting_root.transform.forward * speed); 
         // set the shooter variable in the bullet script:
         //fireBallInstance.GetComponent<Bullet>().shooter = transform;
     }
