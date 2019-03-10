@@ -60,7 +60,6 @@ public class SpellManager : MonoBehaviour {
         if (combo) {
             if (Input.GetKeyDown("p")) {
                 combination += "F";
-                Debug.Log(combination);
                 playerMana.setManaSlider(castSpell(Elements.Fire, playerMana.getMana()));
                 GM.mgr_combats.detectCombo(combination);
                 
@@ -69,10 +68,12 @@ public class SpellManager : MonoBehaviour {
             if (Input.GetKeyDown("o")) {
                 combination += "W";
                 playerMana.setManaSlider(castSpell(Elements.Water, playerMana.getMana()));
+                GM.mgr_combats.detectCombo(combination);
             }
             if (Input.GetKeyDown("i")) {
                 combination += "E";
                 playerMana.setManaSlider(castSpell(Elements.Earth, playerMana.getMana()));
+                GM.mgr_combats.detectCombo(combination);
             }
         }
 
