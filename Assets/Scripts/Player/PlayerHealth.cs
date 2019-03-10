@@ -3,38 +3,56 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
-    public int startHealth = 100;
-    public int currHealth;
-    public int currMaxHealth;
+    private int startHealth = Globals.PLAYER_START_HP;
+    private int currHealth;
+    private int currMaxHealth;
 
     public Slider healthSlider;
     public Text healthText;
 
+    float second = 1f;
+    float currTime = 0.0f;
 
     void Awake() {
-        currHealth = 60;
+        currHealth = startHealth;
         currMaxHealth = startHealth;
-        setHealthSlider();
+        setHealthSlider(currMaxHealth);
     }
 
     void Update() {
+        if (currTime > second) {
+            if (GM.mgr_element.DarkOn()) {
+                setHealthSlider(GM.mgr_spells.castSpell(Elements.Dark, currHealth));
+            }
 
+            currTime = 0;
+        } else {
+            currTime += Time.deltaTime;
+        }
     }
 
+    public int getHealth() {
+        return this.currHealth;
+    }
+
+    public int getMaxHP() {
+        return this.currMaxHealth;
+    }
     public void addHealth(int amt){
         Debug.Log(currHealth);
         Debug.Log(amt);
+
         currHealth += amt;
-        if(currHealth > 100){
+        if (currHealth > 100){
             currHealth = 100;
         }
-        Debug.Log(currHealth);
-        healthSlider.value = currHealth;
-        healthText.text = currHealth + "/" + currMaxHealth;
+
+        setHealthSlider(currHealth);
     }
 
-    public void setHealthSlider() {
-        healthSlider.value = currHealth;
+    public void setHealthSlider(int h) {
+        currHealth = h;
+        healthSlider.value = h;
         healthText.text = currHealth + "/" + currMaxHealth;
     }
 }

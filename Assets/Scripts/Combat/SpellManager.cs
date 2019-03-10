@@ -24,12 +24,13 @@ public class SpellManager : MonoBehaviour {
         GM.mgr_spells = this;
     }
 
-    public PlayerMana getPlayerMana(){
+    public PlayerMana getPlayerMana() {
         return playerMana;
     }
-    public PlayerHealth getPlayerHealth(){
+    public PlayerHealth getPlayerHealth() {
         return playerHealth;
     }
+
 
     // Update is called once per frame
     void Update() {
@@ -47,13 +48,12 @@ public class SpellManager : MonoBehaviour {
         }
 
         if (Input.GetKeyDown("l")) {
-            playerMana.setManaSlider(castSpell(Elements.Dark, playerMana.getMana()));
+            //playerMana.setManaSlider(castSpell(Elements.Dark, playerMana.getMana()));
             GM.mgr_element.DisplayElement(Elements.Dark);
-            
         }
 
         if (Input.GetKeyDown("k")) {
-            playerMana.setManaSlider(castSpell(Elements.Light, playerMana.getMana()));
+           // playerMana.setManaSlider(castSpell(Elements.Light, playerMana.getMana()));
             GM.mgr_element.DisplayElement(Elements.Light);
         }
 
@@ -84,35 +84,34 @@ public class SpellManager : MonoBehaviour {
         playerHealth.addHealth(30);
     }
 
-    public int castSpell(Elements e, int currMana) {
+    public int castSpell(Elements e, int currStat) { // DEALS WITH DRAINING OF STATS
         int cost = GM.mgr_element.getElementCost(e);
 
         if (e == Elements.Dark) {
-            if (currMana < playerMana.currMaxMana) {
-                currMana += cost;
-                if (currMana > playerMana.currMaxMana) {
-                    currMana = playerMana.currMaxMana;
+            if (currStat <= playerHealth.getMaxHP()) { // Gets the mana.
+                currStat -= cost;
+
+                if (currStat < 0) {
+                    currStat = 0;
                 }
-            } else {
-                GM.mgr_element.DisplayElement(e);
             }
-        } else if (e == Elements.Light) {
-            if (currMana > 0) {
-                currMana -= cost;
-                if (currMana < 0) {
-                    currMana = 0;
+        } else if (e == Elements.Light) { // Gets the 
+            if (currStat > 0) {
+                currStat -= cost;
+                if (currStat < 0) {
+                    currStat = 0;
                 }
             } else {
                 GM.mgr_element.DisplayElement(e);
             }
         } else {
-            if (currMana >= cost) {
-                currMana -= cost;
+            if (currStat >= cost) {
+                currStat -= cost;
                 GM.mgr_element.DisplayElement(e);
 
             }
         }
 
-        return currMana;
+        return currStat;
     }
 }

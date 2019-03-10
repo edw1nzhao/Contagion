@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class CombatCollisionHandler : MonoBehaviour
 {
-
+    PlayerHealth pHealth;
+    PlayerMana pMana;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pHealth = GM.mgr_spells.player.GetComponent<PlayerHealth>();
+        pMana = GM.mgr_spells.player.GetComponent<PlayerMana>();
     }
 
     // Update is called once per frame
@@ -22,13 +24,9 @@ public class CombatCollisionHandler : MonoBehaviour
 
     void OnCollisionEnter (Collision col){
         if(GM.mgr_element.LightOn()){
-            GM.mgr_spells.getPlayerHealth().currHealth += 20;
-            GM.mgr_spells.getPlayerHealth().setHealthSlider();
-            Debug.Log("hit");
+            pHealth.addHealth(20);
         } else if(GM.mgr_element.DarkOn()){
-
+            pMana.addMana(20);
         }
     }
-
-    
 }

@@ -14,34 +14,34 @@ public class PlayerMana : MonoBehaviour {
     float currTime = 0.0f;
 
     void Awake() {
-      
-        // Set the initial health of the player.
         currMana = startMana;
         currMaxMana = startMana;
         setManaSlider(currMaxMana);
     }
 
     void Update() {
-
         if (currTime > second) {
-            
             if (GM.mgr_element.LightOn()) {
                 setManaSlider(GM.mgr_spells.castSpell(Elements.Light, currMana));
-            }
-
-            if (GM.mgr_element.DarkOn()) {
-                setManaSlider(GM.mgr_spells.castSpell(Elements.Dark, currMana));
             }
 
             currTime = 0;
         } else {
             currTime += Time.deltaTime;
         }
-
-
-
     }
-    
+
+    public void addMana(int amt) {
+        Debug.Log(currMana);
+        Debug.Log(amt);
+
+        currMana += amt;
+        if (currMana > 100) {
+            currMana = 100;
+        }
+
+        setManaSlider(currMana);
+    }
 
     public void setManaSlider(int m) {
         currMana = m;
