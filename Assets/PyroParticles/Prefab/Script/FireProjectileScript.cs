@@ -93,6 +93,14 @@ namespace DigitalRuby.PyroParticles
                 ProjectileCollisionSound.Play();
             }
 
+            if(c.gameObject.tag == "ENEMY"){
+                Debug.Log("ENEMY");
+                if(GM.mgr_element.LightOn()){
+                    GM.mgr_spells.lightEffect();
+                }
+            }
+            
+
             // if we have contacts, play the collision particle system and call the delegate
             if (c.contacts.Length != 0)
             {

@@ -80,6 +80,10 @@ public class SpellManager : MonoBehaviour {
 
     }
 
+    public void lightEffect(){
+        playerHealth.addHealth(30);
+    }
+
     public int castSpell(Elements e, int currMana) {
         int cost = GM.mgr_element.getElementCost(e);
 
