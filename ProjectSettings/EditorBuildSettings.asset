@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lab.unity
     guid: 71c2d5dd5447f4ec993d701124b435f5
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: 78dbcba86f7540e4dac4677eb677acf5
   m_configObjects: {}
