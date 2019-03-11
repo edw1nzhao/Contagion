@@ -325,8 +325,8 @@ MonoBehaviour:
   ProjectileColliderObject: {fileID: 130866}
   ProjectileCollisionSound: {fileID: 8274270}
   ProjectileExplosionParticleSystem: {fileID: 19899590}
-  ProjectileExplosionRadius: 10
-  ProjectileExplosionForce: 2000
+  ProjectileExplosionRadius: 1
+  ProjectileExplosionForce: 500
   ProjectileColliderDelay: 0
   ProjectileColliderSpeed: 25
   ProjectileDirection: {x: 0, y: 0, z: 1}
@@ -5056,7 +5056,7 @@ ParticleSystem:
 --- !u!199 &19993248
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9556,7 +9556,7 @@ ParticleSystem:
 --- !u!199 &19908910
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14240,7 +14240,7 @@ ParticleSystem:
 --- !u!199 &19998884
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
