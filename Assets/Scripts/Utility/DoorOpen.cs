@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class DoorOpen : MonoBehaviour
 {
-    private Animator anim;
+    //private Animator anim;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,8 +23,8 @@ public class DoorOpen : MonoBehaviour
 
     private void OnMouseDown()
     {
-        int count = 0;
-        anim.SetTrigger("Active");
+        //int count = 0;
+        //anim.SetTrigger("Active");
 
         //while (count < 10000000000000)
         //{
