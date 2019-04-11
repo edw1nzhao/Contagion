@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject yes;
     public GameObject no;
     public GameObject contin;
-    public static bool tutorial;
+    public bool tutorial;
 
     public Animator animator;
 

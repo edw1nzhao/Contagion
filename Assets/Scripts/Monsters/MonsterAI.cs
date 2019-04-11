@@ -29,11 +29,11 @@ public class MonsterAI : MonoBehaviour
         {
             if (nav.remainingDistance < 1.5)
             {
-                nav.Stop();
+                nav.isStopped = true;
 
             }
             else {
-                nav.Resume();
+                nav.isStopped = false;
             }
         }
 
