@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
     public Queue<string> sentences;
+
+    public GameObject start;
 
     public Animator animator;
 
@@ -25,7 +28,9 @@ public class DialogueManager : MonoBehaviour
         nameText.text = dialogue.name;
         sentences.Clear();
 
-        foreach(string sentence in dialogue.sentences)
+        start.SetActive(false);
+
+        foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -60,5 +65,7 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
         Debug.Log("End of conversation");
+
+        SceneManager.LoadScene("Lab");
     }
 }
