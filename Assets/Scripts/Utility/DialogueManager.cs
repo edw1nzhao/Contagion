@@ -11,6 +11,10 @@ public class DialogueManager : MonoBehaviour
     public Queue<string> sentences;
 
     public GameObject start;
+    public GameObject yes;
+    public GameObject no;
+    public GameObject contin;
+    public static bool tutorial;
 
     public Animator animator;
 
@@ -18,6 +22,8 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+        //yes.SetActive(false);
+        //no.SetActive(false);
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -53,6 +59,14 @@ public class DialogueManager : MonoBehaviour
         //Debug.Log(sentence);
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+
+        if (SceneManager.GetActiveScene().name.Equals("LabMenu") && sentences.Count == 0)
+        {
+            contin.SetActive(false);
+            yes.SetActive(true);
+            no.SetActive(true);
+
+        }
     }
 
     IEnumerator TypeSentence (string sentence)
@@ -69,9 +83,10 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
         Debug.Log("End of conversation");
 
-        if (SceneManager.GetActiveScene().name.Equals("LabMenu"))
-        {
-            SceneManager.LoadScene("Lab", LoadSceneMode.Single);
-        }
+        //if (SceneManager.GetActiveScene().name.Equals("LabMenu"))
+        //{
+        //    SceneManager.LoadScene("Lab", LoadSceneMode.Single);
+        //}
     }
+
 }
