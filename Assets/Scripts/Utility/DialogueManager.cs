@@ -27,8 +27,11 @@ public class DialogueManager : MonoBehaviour
 
         nameText.text = dialogue.name;
         sentences.Clear();
-
-        start.SetActive(false);
+        Debug.Log(SceneManager.GetActiveScene());
+        if (SceneManager.GetActiveScene().name.Equals("LabMenu"))
+        {
+            start.SetActive(false);
+        }
 
         foreach (string sentence in dialogue.sentences)
         {
@@ -66,6 +69,9 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
         Debug.Log("End of conversation");
 
-        SceneManager.LoadScene("Lab");
+        if (SceneManager.GetActiveScene().name.Equals("LabMenu"))
+        {
+            SceneManager.LoadScene("Lab", LoadSceneMode.Single);
+        }
     }
 }
