@@ -272,6 +272,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  delay: 20
+  projectile: {fileID: 6981781058462431996, guid: 722f8aa4a1c78934ebd9fe1a7d4006fc,
+    type: 3}
 --- !u!195 &557087194
 NavMeshAgent:
   m_ObjectHideFlags: 0
