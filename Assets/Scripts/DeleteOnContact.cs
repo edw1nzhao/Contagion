@@ -20,16 +20,25 @@ public class DeleteOnContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        
         if (other.tag == "Player")
         {
-            Destroy(this.gameObject);
-            if(this.tag == "Health")
+            if(this.tag != "PlayerProjectile")
+                Destroy(this.gameObject);
+            if (this.tag == "Health")
                 other.GetComponent<PlayerHealth>().addHealth(100);
             if (this.tag == "Mana")
                 other.GetComponent<PlayerMana>().addMana(100);
             if (this.tag == "EnemyProjectile")
                 other.GetComponent<PlayerHealth>().addHealth(-5);
 
+        }
+        if (other.tag == "Enemy") {
+            Destroy(this.gameObject);
+            if (this.tag != "EnemyProjectile")
+                Destroy(this.gameObject);
+            if (this.tag == "PlayerProjectile")
+                other.GetComponent<MonsterAI>().addHealth(-10);
         }
     }
 }

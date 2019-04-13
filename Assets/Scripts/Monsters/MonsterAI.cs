@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class MonsterAI : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class MonsterAI : MonoBehaviour
     public int delay = 100;
     public GameObject projectile;
     int increment;
+    public float health = 100;
+    public float maxhealth = 100;
+    public GameObject healthBarUI;
+    public Slider slider;
 
 
     // Start is called before the first frame update
@@ -19,11 +24,22 @@ public class MonsterAI : MonoBehaviour
     {
        
         nav = GetComponent<NavMeshAgent>();
+        //Canvas c = this.GetComponent<Canvas>();
+        //slider = c.GetComponent<Slider>();
+        slider.value = CalculateHealth();
+    }
+
+    float CalculateHealth() {
+        return health / maxhealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        slider.value = CalculateHealth();
+        if (health <= 0) {
+            Destroy(this.gameObject);
+        }
         if (!canAttack) {
             increment++;
             if (increment >= delay)
@@ -43,16 +59,7 @@ public class MonsterAI : MonoBehaviour
             if (nav.remainingDistance < 1.5)
             {
                 nav.Stop();
-                if (canAttack)
-                {
-                    GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-                    var heading = transform.position - GameObject.FindGameObjectWithTag("Player").transform.position;
-                    var distance = heading.magnitude;
-                    var direction = heading / distance;
-                    bullet.GetComponent<Rigidbody>().AddForce(direction * -300);
-                    canAttack = false;
-                    increment = 0;
-                }
+               
 
             }
             else {
@@ -60,9 +67,39 @@ public class MonsterAI : MonoBehaviour
             }
         }
 
+        if (canAttack && Vector3.Distance(this.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 3)
+        {
+            GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+            var heading = transform.position - GameObject.FindGameObjectWithTag("Player").transform.position;
+            var distance = heading.magnitude;
+            var direction = heading / distance;
+            bullet.GetComponent<Rigidbody>().AddForce(direction * -300);
+            canAttack = false;
+            increment = 0;
+        }
+
     }
     private void FixedUpdate()
     {
         //Debug.Log(player.transform.position);
+    }
+
+    public void addHealth(float i) {
+        health += i;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "PlayerProjectile") {
+            Destroy(other.gameObject);
+        }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "PlayerProjectile")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

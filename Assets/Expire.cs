@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Expire : MonoBehaviour
 {
-    int lifespan = 50;
+    int lifespan = 200;
     int increment = 0;
     // Start is called before the first frame update
     void Start()
