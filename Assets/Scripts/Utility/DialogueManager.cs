@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject yes;
     public GameObject no;
     public GameObject contin;
-    public bool tutorial;
+    public static bool tutorial;
 
     public Animator animator;
 
@@ -22,8 +22,6 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
-        //yes.SetActive(false);
-        //no.SetActive(false);
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -33,8 +31,7 @@ public class DialogueManager : MonoBehaviour
 
         nameText.text = dialogue.name;
         sentences.Clear();
-        Debug.Log(SceneManager.GetActiveScene());
-        if (SceneManager.GetActiveScene().name.Equals("LabMenu"))
+        if (SceneManager.GetActiveScene().name.Equals("LabMenu") || SceneManager.GetActiveScene().name.Equals("Lab"))
         {
             start.SetActive(false);
         }
@@ -45,6 +42,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
+        Debug.Log("next sentence");
     }
 
     public void DisplayNextSentence ()
@@ -56,7 +54,6 @@ public class DialogueManager : MonoBehaviour
         }
         string sentence = sentences.Dequeue();
         //dialogueText.text = sentence;
-        //Debug.Log(sentence);
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
 
