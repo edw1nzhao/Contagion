@@ -58,7 +58,13 @@ public class MonsterAI : MonoBehaviour
         {
             if (nav.remainingDistance < 1.5)
             {
+<<<<<<< HEAD
                 nav.isStopped = true;
+=======
+                nav.Stop();
+               
+>>>>>>> 9fadba602b95d635d8179d3fd220042b651e124e
+
             }
             else {
                 nav.isStopped = false;

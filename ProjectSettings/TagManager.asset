@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Mana
+  - Health
+  - EnemyProjectile
+  - platform
+  - PlayerProjectile
+  - Enemy
   layers:
   - Default
   - TransparentFX
