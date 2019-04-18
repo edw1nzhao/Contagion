@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour {
     static int locoState = Animator.StringToHash("Base Layer.Locomotion");
     static int restState = Animator.StringToHash("Base Layer.Rest");
 
+    private Vector3 offset;
+    private GameObject target = null;
+    private Vector3 orgPos;
+
     void Start() {
         anim = GetComponent<Animator>();
         col = GetComponent<CapsuleCollider>();
@@ -53,6 +57,7 @@ public class PlayerMovement : MonoBehaviour {
 
         velocity = new Vector3(0, 0, v);        
         velocity = transform.TransformDirection(velocity);
+       
 
         if (v > 0.1) {
             velocity *= forwardSpeed;       
@@ -62,5 +67,46 @@ public class PlayerMovement : MonoBehaviour {
 
         transform.localPosition += velocity * Time.fixedDeltaTime;
         transform.Rotate(0, h * rotateSpeed, 0);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "platform")
+        {
+            target = other.gameObject;
+            orgPos = transform.position;
+           
+
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+
+        if (other.gameObject.tag == "platform")
+        {
+            //target = other.gameObject;
+            offset = new Vector3(target.transform.position.x - transform.position.x, 0, target.transform.position.z - transform.position.z);
+            //offset = target.transform.position - transform.position;
+            //transform.position = other.transform.position;
+
+        }
+
+    }
+    void onTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "platform")
+        {
+            target = null;
+
+        }
+        
+    }
+    void LateUpdate()
+    {
+        //if (target != null)
+        //{
+        //    transform.localPosition += offset;
+        //}
     }
 }
