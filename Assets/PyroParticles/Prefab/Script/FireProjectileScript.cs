@@ -93,11 +93,22 @@ namespace DigitalRuby.PyroParticles
                 ProjectileCollisionSound.Play();
             }
 
-            if(c.gameObject.tag == "ENEMY"){
+            if(c.gameObject.tag == "Enemy"){
                 Debug.Log("ENEMY");
+                // ???d
                 if(GM.mgr_element.LightOn()){
                     GM.mgr_spells.lightEffect();
                 }
+                float dmg = 0;
+
+                if(ProjectileColliderObject.name == "FireballCollider"){
+                   dmg = GM.mgr_spells.calculateDamage("FFF"); 
+                }
+                
+                c.gameObject.GetComponent<MonsterAI>().health -= dmg;
+                
+
+
             }
             
 
