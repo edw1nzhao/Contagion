@@ -974,6 +974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireBall: {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 3}
   fireWall: {fileID: 118616, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
+  waterBubble: {fileID: 174438, guid: dab54eeefd2574c87be03d3aff2c1368, type: 3}
   shooting_root: {fileID: 4420200296345092418}
   speed: 100
 --- !u!114 &4420200296260991923

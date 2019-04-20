@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using static SpellDB;
 
 public class SpellManager : MonoBehaviour {
+    
+    SpellDB.Spell Spell;
     ArrayList currentCast;
     private bool combo = false;
     private bool canCast = false;
@@ -82,6 +85,19 @@ public class SpellManager : MonoBehaviour {
 
     public void lightEffect(){
         playerHealth.addHealth(30);
+    }
+
+    public float calculateDamage(string spellCombo){
+        // if light/dark calculate that as well
+        // or just calculate normal
+        float dmg = 0;
+        if(GM.db_spells.getSpellDB().ContainsKey(spellCombo)){
+            // perform visual effects and collisions
+            Spell = GM.db_spells.getSpellDB()[spellCombo];
+            dmg = Spell.attackDmg;
+        }
+
+        return dmg;
     }
 
     public int castSpell(Elements e, int currStat) { // DEALS WITH DRAINING OF STATS

@@ -32,6 +32,7 @@ public class CombatManager : MonoBehaviour
 
     public GameObject fireBall;
     public GameObject fireWall;
+    public GameObject waterBubble;
     public GameObject shooting_root;
     public float speed = 100f;
 
@@ -50,6 +51,17 @@ public class CombatManager : MonoBehaviour
         GameObject fireWallInstance;
         //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
         fireWallInstance = Instantiate(fireWall, new Vector3(shooting_root.transform.position.x,shooting_root.transform.position.y-1, shooting_root.transform.position.z + 5), shooting_root.transform.rotation) as GameObject;
+
+        //Rigidbody fireBallInstRigidbody = fireBallInstance.GetComponent<Rigidbody>();
+        //fireBallInstRigidbody.AddForce(shooting_root.transform.forward * speed); 
+        // set the shooter variable in the bullet script:
+        //fireBallInstance.GetComponent<Bullet>().shooter = transform;
+    }
+
+    void castWaterBubble(){
+        GameObject waterBubbleInstance;
+        //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
+        waterBubbleInstance = Instantiate(waterBubble, new Vector3(shooting_root.transform.position.x,shooting_root.transform.position.y-(1/2), shooting_root.transform.position.z), shooting_root.transform.rotation) as GameObject;
 
         //Rigidbody fireBallInstRigidbody = fireBallInstance.GetComponent<Rigidbody>();
         //fireBallInstRigidbody.AddForce(shooting_root.transform.forward * speed); 
