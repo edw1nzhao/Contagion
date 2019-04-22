@@ -41,8 +41,8 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
+
         DisplayNextSentence();
-        Debug.Log("next sentence");
     }
 
     public void DisplayNextSentence ()
@@ -59,9 +59,9 @@ public class DialogueManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name.Equals("LabMenu") && sentences.Count == 0)
         {
-            contin.SetActive(false);
+            //contin.SetActive(false);
             yes.SetActive(true);
-            no.SetActive(true);
+            //no.SetActive(true);
 
         }
     }
@@ -79,11 +79,6 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
         Debug.Log("End of conversation");
-
-        //if (SceneManager.GetActiveScene().name.Equals("LabMenu"))
-        //{
-        //    SceneManager.LoadScene("Lab", LoadSceneMode.Single);
-        //}
     }
 
 }
