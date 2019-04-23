@@ -16,8 +16,6 @@ public class DummyCombat : MonoBehaviour
                 sign = GameObject.Find("Sign");
                 Destroy(sign);
             }
-            Instantiate(explosionPrefab, collision.contacts[0].point,
-Quaternion.LookRotation(collision.contacts[0].normal));
         }
     }
 }
