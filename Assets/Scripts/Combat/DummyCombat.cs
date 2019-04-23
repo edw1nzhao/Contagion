@@ -5,7 +5,6 @@ using UnityEngine;
 public class DummyCombat : MonoBehaviour
 {
     public GameObject sign;
-    public Transform explosionPrefab;
     private void OnCollisionEnter(Collision collision)
     {
         if (!collision.gameObject.tag.Equals("Player"))

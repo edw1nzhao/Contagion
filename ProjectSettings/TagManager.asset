@@ -11,6 +11,7 @@ TagManager:
   - PlayerProjectile
   - Enemy
   - Dummy
+  - Light
   layers:
   - Default
   - TransparentFX
