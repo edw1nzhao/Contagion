@@ -25,10 +25,12 @@ namespace DigitalRuby.PyroParticles
         public ParticleSystem ProjectileExplosionParticleSystem;
 
         [Tooltip("The radius of the explosion upon collision.")]
-        public float ProjectileExplosionRadius = 50.0f;
+        //public float ProjectileExplosionRadius = 50.0f;
+        public float ProjectileExplosionRadius = 0f;
 
         [Tooltip("The force of the explosion upon collision.")]
-        public float ProjectileExplosionForce = 50.0f;
+        //public float ProjectileExplosionForce = 50.0f;
+        public float ProjectileExplosionForce = 0f;
 
         [Tooltip("An optional delay before the collider is sent off, in case the effect has a pre fire animation.")]
         public float ProjectileColliderDelay = 0.0f;

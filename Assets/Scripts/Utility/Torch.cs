@@ -6,7 +6,7 @@ public class Torch : MonoBehaviour
 { 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.tag.Equals("Player"))
+        if (collision.gameObject.name.Equals("FireballCollider"))
         {
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
             Debug.Log("LOOOOL");
