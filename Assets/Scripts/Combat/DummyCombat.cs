@@ -7,7 +7,8 @@ public class DummyCombat : MonoBehaviour
     public GameObject sign;
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.tag.Equals("Player"))
+        Debug.Log(collision.gameObject.tag);
+        if (!collision.gameObject.tag.Equals("Player") && !collision.gameObject.tag.Equals("Environment"))
         {
             Destroy(gameObject);
             if (gameObject.tag.Equals("Dummy"))

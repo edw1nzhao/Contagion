@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Dummy
   - Light
+  - Environment
   layers:
   - Default
   - TransparentFX
