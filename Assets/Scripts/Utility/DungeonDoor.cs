@@ -8,6 +8,13 @@ public class DungeonDoor : MonoBehaviour
 
     private void OnMouseDown()
     {
-        SceneManager.LoadScene("Dungeon");
+        if (SceneManager.GetActiveScene().name.Equals("Dungeon"))
+        {
+            SceneManager.LoadScene("Town");
+        }
+        else
+        {
+            SceneManager.LoadScene("Dungeon");
+        }
     }
 }

@@ -5,10 +5,11 @@ using UnityEngine;
 public class DummyCombat : MonoBehaviour
 {
     public GameObject sign;
-    public Transform explosionPrefab;
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.tag.Equals("Player"))
+        Debug.Log(collision.gameObject);
+
+        if (collision.gameObject.name.Equals("FireballCollider"))
         {
             Destroy(gameObject);
             if (gameObject.tag.Equals("Dummy"))
