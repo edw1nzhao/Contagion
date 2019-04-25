@@ -29,6 +29,12 @@ public class TorchPuzzle : MonoBehaviour
             {
                 gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 count = 0;
+                if (GameObject.Find("TorchC").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchB").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchA").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchD").transform.GetChild(0).gameObject.active == true)
+                {
+                    ChestA.SetActive(true);
+                    ChestB.SetActive(true);
+                    Sign.SetActive(true);
+                }
             }
             else
             {
@@ -46,6 +52,12 @@ public class TorchPuzzle : MonoBehaviour
             {
                 gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 count = 0;
+                if (GameObject.Find("TorchC").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchB").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchA").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchD").transform.GetChild(0).gameObject.active == true)
+                {
+                    ChestA.SetActive(true);
+                    ChestB.SetActive(true);
+                    Sign.SetActive(true);
+                }
             }
             //}
             //else
@@ -69,6 +81,12 @@ public class TorchPuzzle : MonoBehaviour
             {
                 gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 count = 0;
+                if (GameObject.Find("TorchC").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchB").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchA").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchD").transform.GetChild(0).gameObject.active == true)
+                {
+                    ChestA.SetActive(true);
+                    ChestB.SetActive(true);
+                    Sign.SetActive(true);
+                }
             }
             //else
             //{
@@ -98,11 +116,5 @@ public class TorchPuzzle : MonoBehaviour
         //    Debug.Log("Send in the Goblins");
         //    count = 0;
         //}
-        if (GameObject.Find("TorchC").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchB").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchA").transform.GetChild(0).gameObject.active == true && GameObject.Find("TorchD").transform.GetChild(0).gameObject.active == true)
-        {
-            ChestA.SetActive(true);
-            ChestB.SetActive(true);
-            Sign.SetActive(true);
-        }
     }
 }
