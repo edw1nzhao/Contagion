@@ -6,23 +6,25 @@ using UnityEngine.UI;
 public class ElementManager : MonoBehaviour
 {
     public Image eFire;
-    public Image eEarth;
     public Image eWater;
-    public Image eWind;
+    public Image eEarth;
     public Image eDark;
     public Image eLight;
-    public Image eNull;
+
+    private bool darkOn = false;
+    private bool lightOn = false;
 
     float time;
     public float displayTime = 0.2f;
 
     bool displayIcon;
+
     void Start() {
         GM.mgr_element = this;
     }
 
      void Update() {
-        if  (displayIcon) {
+        if (displayIcon) {
             time += Time.deltaTime;
             if (time >= displayTime) {
                 IconsOff();
@@ -39,16 +41,21 @@ public class ElementManager : MonoBehaviour
             case Elements.Fire:
                 eFire.gameObject.SetActive(true);
                 break;
-            case Elements.Earth:
-                break;
             case Elements.Water:
+                eWater.gameObject.SetActive(true);
                 break;
-            case Elements.Wind:
-                eWind.gameObject.SetActive(true);
+            case Elements.Earth:
+                eEarth.gameObject.SetActive(true);
                 break;
             case Elements.Dark:
+                darkOn = !darkOn;
+                eDark.gameObject.SetActive(darkOn);
+                Debug.Log("Toggled Dark: " + darkOn);
                 break;
             case Elements.Light:
+                lightOn = !lightOn;
+                eLight.gameObject.SetActive(lightOn);
+                Debug.Log("Toggled Light: " + lightOn);
                 break;
             case Elements.Null:
                 break;
@@ -57,13 +64,19 @@ public class ElementManager : MonoBehaviour
         displayIcon = true;     
     }
 
+    public bool LightOn() { return lightOn; }
+    public bool DarkOn() { return darkOn; }
+
+    public int getElementCost(Elements e) {
+        if (e == Elements.Dark || e == Elements.Light) {
+            return Globals.advancedElementCost;
+        }
+        return Globals.baseElementCost;
+    }
+
     void IconsOff() {
         eFire.gameObject.SetActive(false);
-        //eWater.gameObject.SetActive(false);
-        //eEarth.gameObject.SetActive(false);
-        eWind.gameObject.SetActive(false);
-        //eDark.gameObject.SetActive(false);
-        //eLight.gameObject.SetActive(false);
-        //eNull.gameObject.SetActive(false);
+        eWater.gameObject.SetActive(false);
+        eEarth.gameObject.SetActive(false);
     }
 }
