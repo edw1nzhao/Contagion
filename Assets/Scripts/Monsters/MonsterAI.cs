@@ -51,7 +51,7 @@ public class MonsterAI : MonoBehaviour
             //Vector3 dest = player.transform.position;
             //dest.y = this.transform.position.y;
             nav.SetDestination(dest);
-            Debug.Log("player" + dest);
+            //Debug.Log("player" + dest);
         }
 
         if (!nav.pathPending)
