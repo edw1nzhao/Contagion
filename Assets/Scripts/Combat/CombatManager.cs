@@ -23,11 +23,11 @@ public class CombatManager : MonoBehaviour
         // if the combination is in the spells database
         if(GM.db_spells.getSpellDB().ContainsKey(combination)){
             // perform visual effects and collisions
+            GM.mgr_spells.resetCombination();
             Spell = GM.db_spells.getSpellDB()[combination];
             Debug.Log(Spell.spellName);
             Invoke(Spell.spellName, 0f);
         }
-
     }
 
     public GameObject fireBall;
@@ -38,6 +38,8 @@ public class CombatManager : MonoBehaviour
     public GameObject rollingRock;
     public float speed = 100f;
 
+    public AudioSource waterBubbleSound;
+    public AudioSource rockSound;
     void castFireBall(){
         GameObject fireBallInstance;
         //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
@@ -61,6 +63,7 @@ public class CombatManager : MonoBehaviour
     }
 
     void castWaterBubble(){
+        waterBubbleSound.Play();
         GameObject waterBubbleInstance;
         //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
         waterBubbleInstance = Instantiate(waterBubble, new Vector3(shooting_root.transform.position.x,shooting_root.transform.position.y-(1/2), shooting_root.transform.position.z), shooting_root.transform.rotation) as GameObject;
@@ -73,6 +76,7 @@ public class CombatManager : MonoBehaviour
 
     void castRollingRock(){
         GameObject rollingRockInstance;
+        rockSound.Play();
         //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
         rollingRockInstance = Instantiate(rollingRock, new Vector3(shooting_root.transform.position.x,shooting_root.transform.position.y, shooting_root.transform.position.z), shooting_root.transform.rotation) as GameObject;
         
