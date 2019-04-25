@@ -15,6 +15,7 @@ TagManager:
   - Environment
   - ScreenLayout
   - droplet
+  - Water
   layers:
   - Default
   - TransparentFX

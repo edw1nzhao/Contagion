@@ -34,7 +34,10 @@ public class waterFull : MonoBehaviour
         //Debug.Log(enemies.Length);
     }
     public void subEnemy() {
-        numE--;
-        Debug.Log("ENEMY HAD BEEN KILLED");
+        if (full) {
+            numE--;
+            Debug.Log("ENEMY HAD BEEN KILLED");
+        }
+
     }
 }

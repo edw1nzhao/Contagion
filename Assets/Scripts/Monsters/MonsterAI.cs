@@ -75,6 +75,7 @@ public class MonsterAI : MonoBehaviour
             bullet.GetComponent<Rigidbody>().AddForce(direction * -300);
             canAttack = false;
             increment = 0;
+            Debug.Log("ATTAKIG");
         }
 
     }
