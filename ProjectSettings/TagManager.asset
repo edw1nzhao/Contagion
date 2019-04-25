@@ -13,6 +13,8 @@ TagManager:
   - Dummy
   - Light
   - Environment
+  - ScreenLayout
+  - droplet
   layers:
   - Default
   - TransparentFX

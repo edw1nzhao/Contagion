@@ -5,7 +5,10 @@ using UnityEngine;
 public class waterFull : MonoBehaviour
 {
     private float level;
+    public GameObject[] enemies;
     bool full = false;
+    public float numE = 4;
+    bool compl = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,19 @@ public class waterFull : MonoBehaviour
             //move to level 3
             Debug.Log("full");
             full = true;
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                enemies[i].SetActive(true);
+            }
         }
+        if(numE == 0 && !compl) {
+            //Debug.Log("no enemies");
+            compl = true;
+        }
+        //Debug.Log(enemies.Length);
+    }
+    public void subEnemy() {
+        numE--;
+        Debug.Log("ENEMY HAD BEEN KILLED");
     }
 }
