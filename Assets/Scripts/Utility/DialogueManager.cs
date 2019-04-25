@@ -19,34 +19,41 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue) {
+    public void StartDialogue(Dialogue dialogue)
+    {
         animator.SetBool("IsOpen", true);
+        Debug.Log("Starting conversation with " + dialogue.name);
 
         nameText.text = dialogue.name;
         sentences.Clear();
-        if (SceneManager.GetActiveScene().name.Equals("LabMenu") || SceneManager.GetActiveScene().name.Equals("Lab")) {
-            //start.SetActive(false);
+        if (SceneManager.GetActiveScene().name.Equals("LabMenu") || SceneManager.GetActiveScene().name.Equals("Lab"))
+        {
+            start.SetActive(false);
         }
 
-        foreach (string sentence in dialogue.sentences) {
+        foreach (string sentence in dialogue.sentences)
+        {
             sentences.Enqueue(sentence);
         }
+
 
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence ()
     {
-        if (sentences.Count == 0) {
+        if (sentences.Count == 0)
+        {
             EndDialogue();
             return;
         }
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        //dialogueText.text = sentence;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
 
@@ -59,7 +66,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    IEnumerator TypeSentence (string sentence) {
+    IEnumerator TypeSentence (string sentence)
+    {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
@@ -67,7 +75,8 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
     }
-    public void EndDialogue() {
+    public void EndDialogue()
+    {
         animator.SetBool("IsOpen", false);
         Debug.Log("End of conversation");
     }
