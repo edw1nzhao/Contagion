@@ -39,6 +39,7 @@ public class MonsterAI : MonoBehaviour
         slider.value = CalculateHealth();
         if (health <= 0) {
             Destroy(this.gameObject);
+            GameObject.FindGameObjectWithTag("Water").GetComponent<waterFull>().subEnemy();
         }
         if (!canAttack) {
             increment++;
@@ -74,6 +75,7 @@ public class MonsterAI : MonoBehaviour
             bullet.GetComponent<Rigidbody>().AddForce(direction * -300);
             canAttack = false;
             increment = 0;
+            Debug.Log("ATTAKIG");
         }
 
     }
