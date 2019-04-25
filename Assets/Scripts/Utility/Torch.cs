@@ -9,7 +9,6 @@ public class Torch : MonoBehaviour
         if (collision.gameObject.name.Equals("FireballCollider"))
         {
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            Debug.Log("LOOOOL");
         }
     }
 }
