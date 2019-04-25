@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using static SpellDB;
 
 public class SpellManager : MonoBehaviour {
+    
+    SpellDB.Spell Spell;
     ArrayList currentCast;
     private bool combo = false;
     private bool canCast = false;
     private float timer;
     private string combination = "";
+    
 
     public GameObject player;
     public float castingTime = 10f;
@@ -24,6 +28,9 @@ public class SpellManager : MonoBehaviour {
         GM.mgr_spells = this;
     }
 
+    public void resetCombination(){
+        combination = "";
+    }
     public PlayerMana getPlayerMana() {
         return playerMana;
     }
@@ -31,21 +38,48 @@ public class SpellManager : MonoBehaviour {
         return playerHealth;
     }
 
-
+    private bool isCoroutineExecuting = false;
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
-            combo = true;
-            // reset combination
-            combination = "";
-            Debug.Log("down");
-        }
-        if(Input.GetKeyUp(KeyCode.LeftShift)){
-            combo = false;
-            // reset combination
-            combination = "";
+        // if (Input.GetKeyDown(KeyCode.LeftShift)) {
+        //     combo = true;
+        //     // reset combination
+        //     combination = "";
+        //     Debug.Log("down");
+        // }
+        // if(Input.GetKeyUp(KeyCode.LeftShift)){
+        //     combo = false;
+        //     // reset combination
+        //     combination = "";
 
+        // }
+
+
+ 
+        IEnumerator ExecuteAfterTime(float time)
+        {
+            if (isCoroutineExecuting)
+                yield break;
+        
+            isCoroutineExecuting = true;
+        
+            yield return new WaitForSeconds(time);
+        
+            // Code to execute after the delay
+            combo = false;
+            combination = "";
+        
+            isCoroutineExecuting = false;
         }
+
+        if(Input.GetKeyDown("p") || Input.GetKeyDown("o") || Input.GetKeyDown("i"))
+        {
+            if(!combo){
+                combo = true;
+                 StartCoroutine(ExecuteAfterTime(2f));
+            }
+        }
+
 
         if (Input.GetKeyDown("l")) {
             //playerMana.setManaSlider(castSpell(Elements.Dark, playerMana.getMana()));
@@ -60,6 +94,7 @@ public class SpellManager : MonoBehaviour {
         if (combo) {
             if (Input.GetKeyDown("p")) {
                 combination += "F";
+                Debug.Log(combination);
                 playerMana.setManaSlider(castSpell(Elements.Fire, playerMana.getMana()));
                 GM.mgr_combats.detectCombo(combination);
                 
@@ -67,11 +102,13 @@ public class SpellManager : MonoBehaviour {
             }
             if (Input.GetKeyDown("o")) {
                 combination += "W";
+                Debug.Log(combination);
                 playerMana.setManaSlider(castSpell(Elements.Water, playerMana.getMana()));
                 GM.mgr_combats.detectCombo(combination);
             }
             if (Input.GetKeyDown("i")) {
                 combination += "E";
+                Debug.Log(combination);
                 playerMana.setManaSlider(castSpell(Elements.Earth, playerMana.getMana()));
                 GM.mgr_combats.detectCombo(combination);
             }
@@ -82,6 +119,19 @@ public class SpellManager : MonoBehaviour {
 
     public void lightEffect(){
         playerHealth.addHealth(30);
+    }
+
+    public float calculateDamage(string spellCombo){
+        // if light/dark calculate that as well
+        // or just calculate normal
+        float dmg = 0;
+        if(GM.db_spells.getSpellDB().ContainsKey(spellCombo)){
+            // perform visual effects and collisions
+            Spell = GM.db_spells.getSpellDB()[spellCombo];
+            dmg = Spell.attackDmg;
+        }
+
+        return dmg;
     }
 
     public int castSpell(Elements e, int currStat) { // DEALS WITH DRAINING OF STATS

@@ -23,18 +23,23 @@ public class CombatManager : MonoBehaviour
         // if the combination is in the spells database
         if(GM.db_spells.getSpellDB().ContainsKey(combination)){
             // perform visual effects and collisions
+            GM.mgr_spells.resetCombination();
             Spell = GM.db_spells.getSpellDB()[combination];
             Debug.Log(Spell.spellName);
             Invoke(Spell.spellName, 0f);
         }
-
     }
 
     public GameObject fireBall;
     public GameObject fireWall;
+    public GameObject waterBubble;
     public GameObject shooting_root;
+
+    public GameObject rollingRock;
     public float speed = 100f;
 
+    public AudioSource waterBubbleSound;
+    public AudioSource rockSound;
     void castFireBall(){
         GameObject fireBallInstance;
         //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
@@ -51,6 +56,32 @@ public class CombatManager : MonoBehaviour
         //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
         fireWallInstance = Instantiate(fireWall, new Vector3(shooting_root.transform.position.x,shooting_root.transform.position.y-1, shooting_root.transform.position.z + 5), shooting_root.transform.rotation) as GameObject;
 
+        //Rigidbody fireBallInstRigidbody = fireBallInstance.GetComponent<Rigidbody>();
+        //fireBallInstRigidbody.AddForce(shooting_root.transform.forward * speed); 
+        // set the shooter variable in the bullet script:
+        //fireBallInstance.GetComponent<Bullet>().shooter = transform;
+    }
+
+    void castWaterBubble(){
+        waterBubbleSound.Play();
+        GameObject waterBubbleInstance;
+        //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
+        waterBubbleInstance = Instantiate(waterBubble, new Vector3(shooting_root.transform.position.x,shooting_root.transform.position.y-(1/2), shooting_root.transform.position.z), shooting_root.transform.rotation) as GameObject;
+
+        //Rigidbody fireBallInstRigidbody = fireBallInstance.GetComponent<Rigidbody>();
+        //fireBallInstRigidbody.AddForce(shooting_root.transform.forward * speed); 
+        // set the shooter variable in the bullet script:
+        //fireBallInstance.GetComponent<Bullet>().shooter = transform;
+    }
+
+    void castRollingRock(){
+        GameObject rollingRockInstance;
+        rockSound.Play();
+        //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
+        rollingRockInstance = Instantiate(rollingRock, new Vector3(shooting_root.transform.position.x,shooting_root.transform.position.y, shooting_root.transform.position.z), shooting_root.transform.rotation) as GameObject;
+        
+        rollingRockInstance.GetComponent<Rigidbody>().AddForce(shooting_root.transform.forward * 1000f);
+        Destroy(rollingRockInstance, 3.5f);
         //Rigidbody fireBallInstRigidbody = fireBallInstance.GetComponent<Rigidbody>();
         //fireBallInstRigidbody.AddForce(shooting_root.transform.forward * speed); 
         // set the shooter variable in the bullet script:

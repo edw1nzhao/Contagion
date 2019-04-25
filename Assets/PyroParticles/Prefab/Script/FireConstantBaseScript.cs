@@ -80,7 +80,15 @@ namespace DigitalRuby.PyroParticles
 
             // constant effect, so set the duration really high and add an infinite looping sound
             LoopingAudioSource = new LoopingAudioSource(this, AudioSource, StartTime, StopTime);
-            Duration = 999999999;
+            Duration = 5;
+        }
+
+        void OnCollisionEnter(Collision col){
+            if(col.gameObject.tag == "Enemy"){
+
+                float dmg = GM.mgr_spells.calculateDamage("FFEE");
+                col.gameObject.GetComponent<MonsterAI>().health -= dmg;
+            }
         }
 
         protected override void Update()
