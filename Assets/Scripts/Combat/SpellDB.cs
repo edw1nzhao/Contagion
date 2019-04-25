@@ -25,7 +25,8 @@ public class SpellDB : MonoBehaviour
     new Dictionary<string, Spell>(){
         {"FFF", new Spell("FFF", "castFireBall", 30, 30)},
         {"FFEE", new Spell("FFEE", "castFireWall", 10, 30)},
-        {"WWW", new Spell("WWW", "castWaterBubble", 5, 20)}
+        {"WWW", new Spell("WWW", "castWaterBubble", 5, 20)},
+        {"EEE", new Spell("EEE", "castRollingRock", 30, 30)}
     };
 
     public Dictionary<string, Spell> getSpellDB(){

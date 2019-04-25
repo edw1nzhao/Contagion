@@ -976,6 +976,7 @@ MonoBehaviour:
   fireWall: {fileID: 118616, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
   waterBubble: {fileID: 174438, guid: dab54eeefd2574c87be03d3aff2c1368, type: 3}
   shooting_root: {fileID: 4420200296345092418}
+  rollingRock: {fileID: 163348, guid: 91affec9f178ea94fa5850683e149420, type: 3}
   speed: 100
 --- !u!114 &4420200296260991923
 MonoBehaviour:
