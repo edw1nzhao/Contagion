@@ -5,23 +5,32 @@ using UnityEngine;
 public class dropletCollide : MonoBehaviour
 {
     public GameObject water;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Destroy(this.gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void onTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player") {
-            Destroy(this.gameObject);
-            water.transform.position += new Vector3(0, 50, 0);
+
+        if (other.tag == "Player")
+        {
+           ;
+            if (this.tag == "droplet") {
+                Destroy(this.gameObject);
+                water.transform.position += new Vector3(0, .3f, 0);
+            }
+
+
         }
+
     }
 }
