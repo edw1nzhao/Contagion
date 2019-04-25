@@ -40,5 +40,10 @@ public class DeleteOnContact : MonoBehaviour
             if (this.tag == "PlayerProjectile")
                 other.GetComponent<MonsterAI>().addHealth(-10);
         }
+
+        if(other.tag == "fireObj") {
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
+        }
     }
 }

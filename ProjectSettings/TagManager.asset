@@ -16,6 +16,7 @@ TagManager:
   - ScreenLayout
   - droplet
   - Water
+  - fireObj
   layers:
   - Default
   - TransparentFX
