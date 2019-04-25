@@ -23,12 +23,9 @@ public class RedTileTrigger : MonoBehaviour
         if (other.gameObject.tag == "WoodenBox")
         {
             Transform cube = transform.parent;
-            //cube.GetComponent<Renderer>().material.color = Color.green;
             cube.GetComponent<Renderer>().material.color = Color.green;
 
             count++;
-            Debug.Log("---------------------------It's on it! " );
-            Debug.Log(count);
             if (count == 4)
             {
                 Debug.Log("--------All Set!!!--------");
@@ -40,9 +37,9 @@ public class RedTileTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "WoodenBox")
         {
+            Transform cube = transform.parent;
+            cube.GetComponent<Renderer>().material.color = Color.red;
             count--;
-            Debug.Log("---------------------------IT's out!!");
-            Debug.Log(count);
         }
     }
 }
