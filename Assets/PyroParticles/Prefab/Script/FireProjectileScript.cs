@@ -101,7 +101,7 @@ namespace DigitalRuby.PyroParticles
                 float dmg = 0;
 
                 if(ProjectileColliderObject.name == "FireballCollider"){
-                   dmg = GM.mgr_spells.calculateDamage("FFF"); 
+                   dmg = GM.mgr_spells.calculateDamage("FF"); 
                 }
                 
                 c.gameObject.GetComponent<MonsterAI>().health -= dmg;

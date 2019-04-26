@@ -22,7 +22,7 @@ public class RollingRockCollision : MonoBehaviour
     void OnCollisionEnter (Collision col)
     {
         if(col.gameObject.tag == "Enemy"){
-            float dmg = GM.mgr_spells.calculateDamage("EEE");
+            float dmg = GM.mgr_spells.calculateDamage("EE");
             col.gameObject.GetComponent<MonsterAI>().health -= dmg;
         }
 
