@@ -68,7 +68,7 @@ public class MonsterAI : MonoBehaviour
 
         if (canAttack && Vector3.Distance(this.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 3)
         {
-            GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+            GameObject bullet = Instantiate(projectile, new Vector3(this.transform.position.x, this.transform.position.y+1, this.transform.position.z + 2), Quaternion.identity) as GameObject;
             var heading = transform.position - GameObject.FindGameObjectWithTag("Player").transform.position;
             var distance = heading.magnitude;
             var direction = heading / distance;
