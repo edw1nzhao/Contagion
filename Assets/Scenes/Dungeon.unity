@@ -198,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 4420200296766140334, guid: f1dac9868569b03458563fff5d0f49f5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.27
+      value: 5.18
       objectReference: {fileID: 0}
     - target: {fileID: 4420200296766140334, guid: f1dac9868569b03458563fff5d0f49f5,
         type: 3}
@@ -2484,7 +2484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4315287027980304, guid: 2d0f20d11945dcf40bc89cbe6339221c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.95
+      value: 14.68
       objectReference: {fileID: 0}
     - target: {fileID: 4315287027980304, guid: 2d0f20d11945dcf40bc89cbe6339221c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2492,7 +2492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4315287027980304, guid: 2d0f20d11945dcf40bc89cbe6339221c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.49
+      value: -20.83
       objectReference: {fileID: 0}
     - target: {fileID: 4315287027980304, guid: 2d0f20d11945dcf40bc89cbe6339221c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -10417,7 +10417,6 @@ GameObject:
   - component: {fileID: 421603928}
   - component: {fileID: 421603934}
   - component: {fileID: 421603933}
-  - component: {fileID: 421603932}
   - component: {fileID: 421603931}
   - component: {fileID: 421603930}
   - component: {fileID: 421603929}
@@ -10476,7 +10475,7 @@ Animation:
   m_GameObject: {fileID: 421603927}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 80dcb8bf94b814aba8e36514e32b62ef, type: 2}
+  m_Animation: {fileID: 7400000, guid: c1456a8f5f0ce4638b741a3d98c50848, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 80dcb8bf94b814aba8e36514e32b62ef, type: 2}
   - {fileID: 7400000, guid: 930a62975eb994de78223165ed78da7a, type: 2}
@@ -10484,25 +10483,6 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!95 &421603932
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421603927}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7439d10d46a334f9c862f287d9a1e83b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!23 &421603933
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11006,7 +10986,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 436363024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2fc596f78281465f98d39fb052c96c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 04b0c6890c4164c1e8ccf04374dbab1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &436830844 stripped
@@ -18586,6 +18566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775325939}
   - component: {fileID: 775325940}
+  - component: {fileID: 775325941}
   m_Layer: 0
   m_Name: ChestB
   m_TagString: Untagged
@@ -18618,9 +18599,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 775325938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2fc596f78281465f98d39fb052c96c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 04b0c6890c4164c1e8ccf04374dbab1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &775325941
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775325938}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37baed7ecf0e64d8385e6ce8a8509b68, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &775681722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24471,7 +24471,6 @@ GameObject:
   - component: {fileID: 976058953}
   - component: {fileID: 976058955}
   - component: {fileID: 976058954}
-  - component: {fileID: 976058956}
   - component: {fileID: 976058957}
   - component: {fileID: 976058958}
   - component: {fileID: 976058959}
@@ -24541,25 +24540,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976058952}
   m_Mesh: {fileID: 4300000, guid: eefec79bb2127ac43b18f4b669be81a8, type: 3}
---- !u!95 &976058956
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976058952}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7439d10d46a334f9c862f287d9a1e83b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!111 &976058957
 Animation:
   m_ObjectHideFlags: 0
@@ -24569,7 +24549,7 @@ Animation:
   m_GameObject: {fileID: 976058952}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 80dcb8bf94b814aba8e36514e32b62ef, type: 2}
+  m_Animation: {fileID: 7400000, guid: c1456a8f5f0ce4638b741a3d98c50848, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 80dcb8bf94b814aba8e36514e32b62ef, type: 2}
   - {fileID: 7400000, guid: 930a62975eb994de78223165ed78da7a, type: 2}
