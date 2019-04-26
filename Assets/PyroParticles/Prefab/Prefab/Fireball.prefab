@@ -325,7 +325,7 @@ MonoBehaviour:
   ProjectileColliderObject: {fileID: 130866}
   ProjectileCollisionSound: {fileID: 8274270}
   ProjectileExplosionParticleSystem: {fileID: 19899590}
-  ProjectileExplosionRadius: 1
+  ProjectileExplosionRadius: 0
   ProjectileExplosionForce: 500
   ProjectileColliderDelay: 0
   ProjectileColliderSpeed: 25
