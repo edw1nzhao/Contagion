@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657755, g: 0.49641335, b: 0.5748143, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657797, g: 0.49641395, b: 0.57481515, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -188,17 +188,17 @@ PrefabInstance:
     - target: {fileID: 4420200296766140334, guid: f1dac9868569b03458563fff5d0f49f5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.89
+      value: -7.59
       objectReference: {fileID: 0}
     - target: {fileID: 4420200296766140334, guid: f1dac9868569b03458563fff5d0f49f5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.22
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 4420200296766140334, guid: f1dac9868569b03458563fff5d0f49f5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.27
+      value: 30.67
       objectReference: {fileID: 0}
     - target: {fileID: 4420200296766140334, guid: f1dac9868569b03458563fff5d0f49f5,
         type: 3}
@@ -9647,8 +9647,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0879751, y: 2.814814, z: 1.0929241}
-  m_Center: {x: -0.010859787, y: -0.90740746, z: -0.009888649}
+  m_Size: {x: 1.0401813, y: 2.814814, z: 1.0128746}
+  m_Center: {x: 0.030443847, y: -0.90740746, z: -0.020820618}
 --- !u!114 &391070860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11458,8 +11458,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1523147, y: 3.9490929, z: 1.0961971}
-  m_Center: {x: -0.018822908, y: -1.4745464, z: -0.0026426315}
+  m_Size: {x: 0.98057556, y: 3.9490929, z: 0.9619198}
+  m_Center: {x: 0.002773285, y: -1.4745464, z: -0.0087919235}
 --- !u!114 &457911369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22687,8 +22687,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1607335, y: 3.4953892, z: 1.0971336}
-  m_Center: {x: -0.029512286, y: -1.2476946, z: -0.0027637482}
+  m_Size: {x: 1.0198357, y: 3.4953892, z: 1.0032635}
+  m_Center: {x: 0.010857701, y: -1.2476946, z: -0.0037031174}
 --- !u!1 &901910494
 GameObject:
   m_ObjectHideFlags: 0
@@ -41557,11 +41557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1866322582}
     m_Modifications:
-    - target: {fileID: 7700470879348932543, guid: 41ea0137d8ab34cf7b7ae3cdef2e9de9,
-        type: 3}
-      propertyPath: m_Name
-      value: groundSpike01
-      objectReference: {fileID: 0}
     - target: {fileID: 3478300322232531593, guid: 41ea0137d8ab34cf7b7ae3cdef2e9de9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41616,6 +41611,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700470879348932543, guid: 41ea0137d8ab34cf7b7ae3cdef2e9de9,
+        type: 3}
+      propertyPath: m_Name
+      value: groundSpike01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41ea0137d8ab34cf7b7ae3cdef2e9de9, type: 3}
@@ -42039,8 +42039,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1249821, y: 3.0416725, z: 1.0559158}
-  m_Center: {x: -0.01664865, y: -1.0208366, z: -0.027957916}
+  m_Size: {x: 0.980644, y: 3.0416725, z: 1.0075455}
+  m_Center: {x: 0.01551497, y: -1.0208366, z: -0.0037727356}
 --- !u!114 &1634521406
 MonoBehaviour:
   m_ObjectHideFlags: 0
