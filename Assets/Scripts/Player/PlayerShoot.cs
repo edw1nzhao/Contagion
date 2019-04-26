@@ -24,7 +24,7 @@ public class PlayerShoot : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Pressed secondary button.");
+            //Debug.Log("Pressed secondary button.");
 
             if (canAttack)
             {

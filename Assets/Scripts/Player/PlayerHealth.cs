@@ -57,8 +57,8 @@ public class PlayerHealth : MonoBehaviour {
         return this.currMaxHealth;
     }
     public void addHealth(int amt){
-        Debug.Log(currHealth);
-        Debug.Log(amt);
+        //Debug.Log(currHealth);
+        //Debug.Log(amt);
 
         currHealth += amt;
         if (currHealth > 100){

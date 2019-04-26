@@ -21,7 +21,7 @@ public class waterFull : MonoBehaviour
     {
         if((this.transform.position.y >= (level + (0.3f * 8)-.1f)) && !full) {
             //move to level 3
-            Debug.Log("full");
+            //Debug.Log("full");
             full = true;
             for (int i = 0; i < enemies.Length; i++)
             {
@@ -37,7 +37,7 @@ public class waterFull : MonoBehaviour
     public void subEnemy() {
         if (full) {
             numE--;
-            Debug.Log("ENEMY HAD BEEN KILLED");
+            //Debug.Log("ENEMY HAD BEEN KILLED");
             for (int i = 0; i < reward.Length; i++)
             {
                 reward[i].SetActive(true);

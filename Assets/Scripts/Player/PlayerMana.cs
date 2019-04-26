@@ -38,8 +38,8 @@ public class PlayerMana : MonoBehaviour {
     }
 
     public void addMana(int amt) {
-        Debug.Log(currMana);
-        Debug.Log(amt);
+        //Debug.Log(currMana);
+        //Debug.Log(amt);
 
         currMana += amt;
         if (currMana > 100) {
