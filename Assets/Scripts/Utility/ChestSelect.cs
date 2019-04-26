@@ -11,10 +11,12 @@ public class ChestSelect : MonoBehaviour
         if(this.name == "PrizeA") {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().setMax(150);
             Globals.PLAYER_START_HP = 150;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().setHealthSlider(Globals.PLAYER_START_HP);
         }
         if(this.name == "PrizeB") {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMana>().setMax(150);
             Globals.PLAYER_START_MP = 150;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMana>().setManaSlider(Globals.PLAYER_START_MP);
         }
         GameObject.FindGameObjectWithTag("Player").transform.localPosition = new Vector3(1.7f,.77f,11.5f);
     }
