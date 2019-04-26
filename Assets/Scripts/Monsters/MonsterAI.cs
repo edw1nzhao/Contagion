@@ -16,7 +16,7 @@ public class MonsterAI : MonoBehaviour
     public float maxhealth = 100;
     public GameObject healthBarUI;
     public Slider slider;
-
+    public bool isBoss;
 
     // Start is called before the first frame update
 
@@ -40,6 +40,11 @@ public class MonsterAI : MonoBehaviour
         if (health <= 0) {
             Destroy(this.gameObject);
             GameObject.FindGameObjectWithTag("Water").GetComponent<waterFull>().subEnemy();
+            if (isBoss)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Lab", UnityEngine.SceneManagement.LoadSceneMode.Single);
+            }
+
         }
         if (!canAttack) {
             increment++;
