@@ -17,6 +17,8 @@ TagManager:
   - droplet
   - Water
   - fireObj
+  - Boulder
+  - WoodenBox
   layers:
   - Default
   - TransparentFX
