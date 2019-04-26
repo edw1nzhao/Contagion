@@ -19,11 +19,11 @@ public class TorchPuzzle : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("FireballCollider"))
         {
-            Debug.Log(gameObject.name);
+            //Debug.Log(gameObject.name);
             if (gameObject.name == "TorchD"&& GameObject.Find("TorchB").transform.GetChild(0).gameObject.activeSelf == false && GameObject.Find("TorchA").transform.GetChild(0).gameObject.activeSelf == false && GameObject.Find("TorchC").transform.GetChild(0).gameObject.activeSelf == false)
             {
                 count = 0;
-                Debug.Log("Success!");
+                //Debug.Log("Success!");
                 gameObject.transform.GetChild(0).gameObject.SetActive(true);
             }
 

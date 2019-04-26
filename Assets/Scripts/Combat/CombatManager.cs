@@ -18,7 +18,7 @@ public class CombatManager : MonoBehaviour
     }
 
     public void detectCombo(string combination){
-        Debug.Log(GM.db_spells.getSpellDB());
+        //Debug.Log(GM.db_spells.getSpellDB());
 
         
         // if the combination is in the spells database
@@ -26,7 +26,7 @@ public class CombatManager : MonoBehaviour
             // perform visual effects and collisions
             GM.mgr_spells.resetCombination();
             Spell = GM.db_spells.getSpellDB()[combination];
-            Debug.Log(Spell.spellName);
+            //Debug.Log(Spell.spellName);
             Invoke(Spell.spellName, 0f);
         }
     }
@@ -65,9 +65,9 @@ public class CombatManager : MonoBehaviour
     }
 
     void castWaterBubble(){
-        Debug.Log("play");
+        //Debug.Log("play");
         waterBubbleSound.Play();
-                Debug.Log("end");
+                //Debug.Log("end");
 
         GameObject waterBubbleInstance;
         //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
@@ -80,7 +80,7 @@ public class CombatManager : MonoBehaviour
         //var distance = heading.magnitude;
         //var direction = heading / distance;
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 300);
-        Debug.Log("hidden");
+        //Debug.Log("hidden");
         //Rigidbody fireBallInstRigidbody = fireBallInstance.GetComponent<Rigidbody>();
         //fireBallInstRigidbody.AddForce(shooting_root.transform.forward * speed); 
         // set the shooter variable in the bullet script:

@@ -13,6 +13,6 @@ public class Clicked3D : MonoBehaviour
 
     void OnMouseDown() {
         dt.TriggerDialogue();
-        Debug.Log("Triggered");
+        //Debug.Log("Triggered");
     }
 }

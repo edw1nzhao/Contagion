@@ -12,7 +12,7 @@ public class WaterBubbleCollision : MonoBehaviour
 
     void OnParticleCollision(GameObject other){
         if(other.tag == "Enemy"){
-            Debug.Log("Particle Hit ENEMY");
+            //Debug.Log("Particle Hit ENEMY");
             float dmg = GM.mgr_spells.calculateDamage("WW");
             other.GetComponent<MonsterAI>().health -= dmg;
         }

@@ -96,7 +96,7 @@ namespace DigitalRuby.PyroParticles
             }
 
             if(c.gameObject.tag == "Enemy"){
-                Debug.Log("ENEMY");
+                //Debug.Log("ENEMY");
 
                 float dmg = 0;
 
