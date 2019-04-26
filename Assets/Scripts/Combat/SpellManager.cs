@@ -66,45 +66,43 @@ public class SpellManager : MonoBehaviour {
         }
 
 
-        if (Input.GetKeyDown("l")) {
-            //playerMana.setManaSlider(castSpell(Elements.Dark, playerMana.getMana()));
-            GM.mgr_element.DisplayElement(Elements.Dark);
-        }
-
-        if (Input.GetKeyDown("k")) {
-           // playerMana.setManaSlider(castSpell(Elements.Light, playerMana.getMana()));
-            GM.mgr_element.DisplayElement(Elements.Light);
-        }
 
         if (combo) {
             if (Input.GetKeyDown("p")) {
                 combination += "F";
                 //Debug.Log(combination);
-                playerMana.setManaSlider(castSpell(Elements.Fire, playerMana.getMana()));
-                GM.mgr_combats.detectCombo(combination);
+                int mana = castSpell(Elements.Fire, playerMana.getMana());
+                if(mana != playerMana.getMana()){
+                    playerMana.setManaSlider(castSpell(Elements.Fire, playerMana.getMana()));
+                    GM.mgr_combats.detectCombo(combination);
+                }
                 
                 //GM.mgr_element.DisplayElement(Elements.Light);
             }
             if (Input.GetKeyDown("o")) {
                 combination += "W";
                 //Debug.Log(combination);
-                playerMana.setManaSlider(castSpell(Elements.Water, playerMana.getMana()));
-                GM.mgr_combats.detectCombo(combination);
+                int mana = castSpell(Elements.Water, playerMana.getMana());
+                if(mana != playerMana.getMana()){
+                    playerMana.setManaSlider(castSpell(Elements.Water, playerMana.getMana()));
+                    GM.mgr_combats.detectCombo(combination);
+                }
             }
             if (Input.GetKeyDown("i")) {
                 combination += "E";
                 //Debug.Log(combination);
-                playerMana.setManaSlider(castSpell(Elements.Earth, playerMana.getMana()));
-                GM.mgr_combats.detectCombo(combination);
+                int mana = castSpell(Elements.Earth, playerMana.getMana());
+                if(mana != playerMana.getMana()){
+                    playerMana.setManaSlider(castSpell(Elements.Earth, playerMana.getMana()));
+                    GM.mgr_combats.detectCombo(combination);
+                }
             }
         }
 
 
     }
 
-    public void lightEffect(){
-        playerHealth.addHealth(30);
-    }
+
 
     public float calculateDamage(string spellCombo){
         // if light/dark calculate that as well
@@ -122,31 +120,10 @@ public class SpellManager : MonoBehaviour {
     public int castSpell(Elements e, int currStat) { // DEALS WITH DRAINING OF STATS
         int cost = GM.mgr_element.getElementCost(e);
 
-        if (e == Elements.Dark) {
-            if (currStat <= playerHealth.getMaxHP()) { // Gets the mana.
-                currStat -= cost;
-
-                if (currStat < 0) {
-                    currStat = 0;
-                }
-            }
-        } else if (e == Elements.Light) { // Gets the 
-            if (currStat > 0) {
-                currStat -= cost;
-                if (currStat < 0) {
-                    currStat = 0;
-                }
-            } else {
-                GM.mgr_element.DisplayElement(e);
-            }
-        } else {
-            if (currStat >= cost) {
-                currStat -= cost;
-                GM.mgr_element.DisplayElement(e);
-
-            }
+        if (currStat >= cost) {
+            currStat -= cost;
+            GM.mgr_element.DisplayElement(e);
         }
-
         return currStat;
     }
 }

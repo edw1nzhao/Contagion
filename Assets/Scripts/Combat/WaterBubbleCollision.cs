@@ -11,7 +11,6 @@ public class WaterBubbleCollision : MonoBehaviour
     }
 
     void OnParticleCollision(GameObject other){
-        Debug.Log("Particle Hit");
         if(other.tag == "Enemy"){
             Debug.Log("Particle Hit ENEMY");
             float dmg = GM.mgr_spells.calculateDamage("WWW");
