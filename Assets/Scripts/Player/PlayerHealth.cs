@@ -19,6 +19,12 @@ public class PlayerHealth : MonoBehaviour {
         setHealthSlider(currMaxHealth);
     }
 
+    public void setMax(int f)
+    {
+        currMaxHealth = f;
+    }
+
+
     void Update() {
         if (currTime > second) {
 

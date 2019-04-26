@@ -18,7 +18,9 @@ public class PlayerMana : MonoBehaviour {
         currMaxMana = startMana;
         setManaSlider(currMaxMana);
     }
-
+    public void setMax(int f) {
+        currMaxMana = f;
+    }
     void Update() {
         if (currTime > second) {
 
