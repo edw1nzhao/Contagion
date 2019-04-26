@@ -19,6 +19,7 @@ public class CombatManager : MonoBehaviour
 
     public void detectCombo(string combination){
         Debug.Log(GM.db_spells.getSpellDB());
+
         
         // if the combination is in the spells database
         if(GM.db_spells.getSpellDB().ContainsKey(combination)){
