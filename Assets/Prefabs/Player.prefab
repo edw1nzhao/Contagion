@@ -998,6 +998,7 @@ GameObject:
   - component: {fileID: 4420200296260991922}
   - component: {fileID: 4420200296260991885}
   - component: {fileID: 420957}
+  - component: {fileID: 8489808806895052265}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1157,6 +1158,22 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
 --- !u!114 &420957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420200296260991887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2144d929f92b644eadf3805a4563c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increment: 0
+  delay: 50
+  projectile: {fileID: 1582762077833273232, guid: 0e9812be9e316bb4f9a8cfe74a76cd4e,
+    type: 3}
+--- !u!114 &8489808806895052265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1476,7 +1493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4420200296345092418}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.107, z: 0.916}
+  m_LocalPosition: {x: -0, y: 1.107, z: 1.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4420200296260991884}
