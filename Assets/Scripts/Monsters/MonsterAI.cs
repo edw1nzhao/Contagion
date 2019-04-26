@@ -42,7 +42,7 @@ public class MonsterAI : MonoBehaviour
             GameObject.FindGameObjectWithTag("Water").GetComponent<waterFull>().subEnemy();
             if (isBoss)
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Lab", UnityEngine.SceneManagement.LoadSceneMode.Single);
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Ending", UnityEngine.SceneManagement.LoadSceneMode.Single);
             }
 
         }
