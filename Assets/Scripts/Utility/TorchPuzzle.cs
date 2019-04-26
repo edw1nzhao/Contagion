@@ -6,6 +6,8 @@ public class TorchPuzzle : MonoBehaviour
 {
     public GameObject ChestA;
     public GameObject ChestB;
+    public GameObject PrizeA;
+    public GameObject PrizeB;
     public GameObject Sign;
     static int count;
     // Start is called before the first frame update
@@ -69,6 +71,9 @@ public class TorchPuzzle : MonoBehaviour
             {
                 ChestA.SetActive(true);
                 ChestB.SetActive(true);
+                PrizeA.SetActive(true);
+                PrizeB.SetActive(true);
+
                 Sign.SetActive(true);
                 gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 count = 0;
