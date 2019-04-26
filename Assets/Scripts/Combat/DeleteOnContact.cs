@@ -34,7 +34,7 @@ public class DeleteOnContact : MonoBehaviour
 
         }
         if (other.tag == "Enemy") {
-            Destroy(this.gameObject);
+
             if (this.tag != "EnemyProjectile")
                 Destroy(this.gameObject);
             if (this.tag == "PlayerProjectile")

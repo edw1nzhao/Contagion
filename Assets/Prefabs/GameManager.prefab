@@ -45,11 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c00e581e84594f729e2ece05e86c418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eFire: {fileID: 0}
-  eWater: {fileID: 0}
-  eEarth: {fileID: 0}
-  eDark: {fileID: 0}
-  eLight: {fileID: 0}
+  eFire: {fileID: 3145332993818728260, guid: 618132f71249f4a42b217f3bd0428d86, type: 3}
+  eWater: {fileID: 5420844270432839966, guid: e883d3ccc1c4542a08a6befc7d0f91a5, type: 3}
+  eEarth: {fileID: 5885351214261424578, guid: 13cae7c85750a41faa247c11753f26ff, type: 3}
   displayTime: 0.3
 --- !u!114 &8340764183912923009
 MonoBehaviour:
