@@ -1021,6 +1021,11 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 595181130}
+    - target: {fileID: 4420200296481142039, guid: f1dac9868569b03458563fff5d0f49f5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1dac9868569b03458563fff5d0f49f5, type: 3}
 --- !u!4 &377681142 stripped
@@ -5642,7 +5647,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654769763}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.04
   m_Height: 0.2
