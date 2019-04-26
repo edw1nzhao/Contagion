@@ -17,8 +17,13 @@ public class fireContact : MonoBehaviour
     }
 
     public void onTriggerEnter(Collider other) { 
-        if(other.tag == "PlayerProjectile") {
+        if(other.tag == "Bubble") {
             Destroy(this.gameObject);
+        }
+        if (other.tag == "fireObj")
+        {
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

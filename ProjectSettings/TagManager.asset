@@ -19,6 +19,7 @@ TagManager:
   - fireObj
   - Boulder
   - WoodenBox
+  - Bubble
   layers:
   - Default
   - TransparentFX

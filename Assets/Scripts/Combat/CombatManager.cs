@@ -34,6 +34,7 @@ public class CombatManager : MonoBehaviour
     public GameObject fireWall;
     public GameObject waterBubble;
     public GameObject shooting_root;
+    public GameObject hiddenBubble;
 
     public GameObject rollingRock;
     public float speed = 100f;
@@ -68,6 +69,14 @@ public class CombatManager : MonoBehaviour
         //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
         waterBubbleInstance = Instantiate(waterBubble, new Vector3(shooting_root.transform.position.x,shooting_root.transform.position.y-(1/2), shooting_root.transform.position.z), shooting_root.transform.rotation) as GameObject;
 
+        Vector3 t = new Vector3(transform.position.x, (float)(transform.position.y + .5), transform.position.z);
+        GameObject bullet = Instantiate(hiddenBubble, t, Quaternion.identity) as GameObject;
+
+        //var heading = transform.position - GameObject.FindGameObjectWithTag("Player").transform.position;
+        //var distance = heading.magnitude;
+        //var direction = heading / distance;
+        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 300);
+        Debug.Log("hidden");
         //Rigidbody fireBallInstRigidbody = fireBallInstance.GetComponent<Rigidbody>();
         //fireBallInstRigidbody.AddForce(shooting_root.transform.forward * speed); 
         // set the shooter variable in the bullet script:

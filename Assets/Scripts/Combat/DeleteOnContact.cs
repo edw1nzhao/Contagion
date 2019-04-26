@@ -23,7 +23,7 @@ public class DeleteOnContact : MonoBehaviour
         
         if (other.tag == "Player")
         {
-            if(this.tag != "PlayerProjectile")
+            if(this.tag != "PlayerProjectile" && this.tag != "Bubble")
                 Destroy(this.gameObject);
             if (this.tag == "Health")
                 other.GetComponent<PlayerHealth>().addHealth(100);
@@ -41,9 +41,16 @@ public class DeleteOnContact : MonoBehaviour
                 other.GetComponent<MonsterAI>().addHealth(-10);
         }
 
-        if(other.tag == "fireObj") {
-            Destroy(this.gameObject);
-            Destroy(other.gameObject);
+        if (other.tag == "fireObj")
+        {
+
+            if (this.tag == "Bubble")
+            {
+                Destroy(this.gameObject);
+                Destroy(other.gameObject);
+            }
         }
+
+
     }
 }
