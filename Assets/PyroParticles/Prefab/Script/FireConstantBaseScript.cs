@@ -94,6 +94,7 @@ namespace DigitalRuby.PyroParticles
         protected override void Update()
         {
             base.Update();
+            if (Duration <= 5) Duration = 10;
 
             LoopingAudioSource.Update();
         }
