@@ -21,9 +21,6 @@ public class PlayerHealth : MonoBehaviour {
 
     void Update() {
         if (currTime > second) {
-            if (GM.mgr_element.DarkOn()) {
-                setHealthSlider(GM.mgr_spells.castSpell(Elements.Dark, currHealth));
-            }
 
             currTime = 0;
         } else {

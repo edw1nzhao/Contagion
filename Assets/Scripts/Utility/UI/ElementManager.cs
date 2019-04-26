@@ -8,11 +8,6 @@ public class ElementManager : MonoBehaviour
     public Image eFire;
     public Image eWater;
     public Image eEarth;
-    public Image eDark;
-    public Image eLight;
-
-    private bool darkOn = false;
-    private bool lightOn = false;
 
     float time;
     public float displayTime = 0.2f;
@@ -47,30 +42,12 @@ public class ElementManager : MonoBehaviour
             case Elements.Earth:
                 eEarth.gameObject.SetActive(true);
                 break;
-            case Elements.Dark:
-                darkOn = !darkOn;
-                eDark.gameObject.SetActive(darkOn);
-                Debug.Log("Toggled Dark: " + darkOn);
-                break;
-            case Elements.Light:
-                lightOn = !lightOn;
-                eLight.gameObject.SetActive(lightOn);
-                Debug.Log("Toggled Light: " + lightOn);
-                break;
-            case Elements.Null:
-                break;
         }
 
         displayIcon = true;     
     }
 
-    public bool LightOn() { return lightOn; }
-    public bool DarkOn() { return darkOn; }
-
     public int getElementCost(Elements e) {
-        if (e == Elements.Dark || e == Elements.Light) {
-            return Globals.advancedElementCost;
-        }
         return Globals.baseElementCost;
     }
 

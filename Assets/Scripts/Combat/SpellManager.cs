@@ -41,21 +41,6 @@ public class SpellManager : MonoBehaviour {
     private bool isCoroutineExecuting = false;
     // Update is called once per frame
     void Update() {
-        // if (Input.GetKeyDown(KeyCode.LeftShift)) {
-        //     combo = true;
-        //     // reset combination
-        //     combination = "";
-        //     Debug.Log("down");
-        // }
-        // if(Input.GetKeyUp(KeyCode.LeftShift)){
-        //     combo = false;
-        //     // reset combination
-        //     combination = "";
-
-        // }
-
-
- 
         IEnumerator ExecuteAfterTime(float time)
         {
             if (isCoroutineExecuting)
@@ -94,7 +79,7 @@ public class SpellManager : MonoBehaviour {
         if (combo) {
             if (Input.GetKeyDown("p")) {
                 combination += "F";
-                Debug.Log(combination);
+                //Debug.Log(combination);
                 playerMana.setManaSlider(castSpell(Elements.Fire, playerMana.getMana()));
                 GM.mgr_combats.detectCombo(combination);
                 
@@ -102,13 +87,13 @@ public class SpellManager : MonoBehaviour {
             }
             if (Input.GetKeyDown("o")) {
                 combination += "W";
-                Debug.Log(combination);
+                //Debug.Log(combination);
                 playerMana.setManaSlider(castSpell(Elements.Water, playerMana.getMana()));
                 GM.mgr_combats.detectCombo(combination);
             }
             if (Input.GetKeyDown("i")) {
                 combination += "E";
-                Debug.Log(combination);
+                //Debug.Log(combination);
                 playerMana.setManaSlider(castSpell(Elements.Earth, playerMana.getMana()));
                 GM.mgr_combats.detectCombo(combination);
             }

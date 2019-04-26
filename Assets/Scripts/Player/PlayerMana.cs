@@ -21,9 +21,6 @@ public class PlayerMana : MonoBehaviour {
 
     void Update() {
         if (currTime > second) {
-            if (GM.mgr_element.LightOn()) {
-                setManaSlider(GM.mgr_spells.castSpell(Elements.Light, currMana));
-            }
 
             currTime = 0;
         } else {

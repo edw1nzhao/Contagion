@@ -17,16 +17,10 @@ public class CombatCollisionHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if GM.elementmanager lighton && hit --> hp gain
-        // if GM.elementmanager darkon && hit --> attack * 1.20
 
     }
 
     void OnCollisionEnter (Collision col){
-        if(GM.mgr_element.LightOn()){
-            pHealth.addHealth(20);
-        } else if(GM.mgr_element.DarkOn()){
-            pMana.addMana(20);
-        }
+
     }
 }

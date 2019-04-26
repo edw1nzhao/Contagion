@@ -97,10 +97,7 @@ namespace DigitalRuby.PyroParticles
 
             if(c.gameObject.tag == "Enemy"){
                 Debug.Log("ENEMY");
-                // ???d
-                if(GM.mgr_element.LightOn()){
-                    GM.mgr_spells.lightEffect();
-                }
+
                 float dmg = 0;
 
                 if(ProjectileColliderObject.name == "FireballCollider"){
