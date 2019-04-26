@@ -17,6 +17,7 @@ public class MonsterAI : MonoBehaviour
     public GameObject healthBarUI;
     public Slider slider;
     public bool isBoss = false;
+    int range = 3;
 
     // Start is called before the first frame update
 
@@ -36,6 +37,9 @@ public class MonsterAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isBoss) {
+            range = 10;
+        }
         slider.value = CalculateHealth();
         if (health <= 0) {
             Destroy(this.gameObject);
@@ -71,7 +75,7 @@ public class MonsterAI : MonoBehaviour
             }
         }
 
-        if (canAttack && Vector3.Distance(this.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 3)
+        if (canAttack && Vector3.Distance(this.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < range)
         {
             GameObject bullet = Instantiate(projectile, new Vector3(this.transform.position.x, this.transform.position.y+.3f, this.transform.position.z), Quaternion.identity) as GameObject;
             var heading = transform.position - GameObject.FindGameObjectWithTag("Player").transform.position;
