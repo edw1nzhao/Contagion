@@ -182,7 +182,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: f2a691ec6720d6c4eba939bb8f3241b1, type: 3}
 --- !u!54 &16535307
@@ -954,7 +954,7 @@ PrefabInstance:
     - target: {fileID: 4420200296766140334, guid: f1dac9868569b03458563fff5d0f49f5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.51
+      value: -1.3462417
       objectReference: {fileID: 0}
     - target: {fileID: 4420200296766140334, guid: f1dac9868569b03458563fff5d0f49f5,
         type: 3}
@@ -5647,7 +5647,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654769763}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.04
   m_Height: 0.2
@@ -5681,21 +5681,14 @@ MonoBehaviour:
   dialogue:
     name: Master Alchemist
     sentences:
-    - "Took you long enough! Do you know how hard it was for me to teleport you in
-      from the other side of town?\r"
-    - "The town is really a mess... I'm going to really have it from the people if
-      they found out that I was the cause of this...\r"
-    - The mouse we were experimenting on had run away and went to the sewers last
-      night! Thankfully no one saw it come out of the laboratory, but it's a matter
-      of time before everyone finds out!
-    - I need your skills to tackle this task for me and resolve it as soon as possible.
-    - REMEMBER, I know it's only been a short time since you've learnt how to cast
-      spells...
-    - But you can always press the ESCAPE key to double check your spell list when
-      you forget! Make sure you have enough mana.
-    - "Wait! Get going! My life is on the line! My magically inconvenient boulder
-      fell in front of the front door. You're going to have to bust through that first.
-      \nGET GOING I SAID!"
+    - Thank you for sorting out the madness and hysteria that went on in the dungeons.
+    - With your help, the village is now safe from the danger of the monsters that
+      creep within the dungeons.
+    - We have also been able to treat the remaining animals and ensure that nothing
+      like this will ever happen again.
+    - 'You have been a great help. You are the hero that we all needed. '
+    - Thank you from all of us.
+    - '------------END------------'
 --- !u!1001 &1669774359
 PrefabInstance:
   m_ObjectHideFlags: 0
