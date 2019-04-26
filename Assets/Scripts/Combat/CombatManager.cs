@@ -65,7 +65,10 @@ public class CombatManager : MonoBehaviour
     }
 
     void castWaterBubble(){
+        Debug.Log("play");
         waterBubbleSound.Play();
+                Debug.Log("end");
+
         GameObject waterBubbleInstance;
         //fireBallInstance = Instantiate(fireBall, new Vector3(shooting_root.transform.position.x, shooting_root.transform.position.y, shooting_root.transform.position.z + 20), shooting_root.transform.rotation) as GameObject;
         waterBubbleInstance = Instantiate(waterBubble, new Vector3(shooting_root.transform.position.x,shooting_root.transform.position.y-(1/2), shooting_root.transform.position.z), shooting_root.transform.rotation) as GameObject;

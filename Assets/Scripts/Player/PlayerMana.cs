@@ -6,7 +6,8 @@ public class PlayerMana : MonoBehaviour {
     public int startMana = 100; 
     public int currMaxMana;
     public int currMana;   
-    public Slider manaSlider; 
+    public Slider manaSlider;
+    int inc;
 
     public Text manaText;
 
@@ -19,9 +20,15 @@ public class PlayerMana : MonoBehaviour {
         setManaSlider(currMaxMana);
     }
     public void setMax(int f) {
-        currMaxMana = f;
+        currMaxMana += f;
     }
     void Update() {
+        inc++;
+        if (inc > 100 && currMana < currMaxMana) {
+            inc = 0;
+            currMana++;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMana>().setManaSlider(currMana);
+        }
         if (currTime > second) {
 
             currTime = 0;
