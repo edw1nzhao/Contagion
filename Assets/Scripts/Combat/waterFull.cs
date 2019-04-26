@@ -9,6 +9,7 @@ public class waterFull : MonoBehaviour
     bool full = false;
     public float numE = 4;
     bool compl = false;
+    public GameObject[] reward;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,10 @@ public class waterFull : MonoBehaviour
         if (full) {
             numE--;
             Debug.Log("ENEMY HAD BEEN KILLED");
+            for (int i = 0; i < reward.Length; i++)
+            {
+                reward[i].SetActive(true);
+            }
         }
 
     }

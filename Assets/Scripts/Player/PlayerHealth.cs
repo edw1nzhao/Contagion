@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public void setMax(int f)
     {
-        currMaxHealth = f;
+        currMaxHealth =+ f;
     }
 
 
