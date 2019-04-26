@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon Boss.unity
     guid: 6c5aa1469c4aab24aaa60689ba67d2df
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: e097ab023b1424a4ba2aae2e5d793c48
   m_configObjects: {}

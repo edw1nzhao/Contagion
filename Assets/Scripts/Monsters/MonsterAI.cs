@@ -16,7 +16,7 @@ public class MonsterAI : MonoBehaviour
     public float maxhealth = 100;
     public GameObject healthBarUI;
     public Slider slider;
-    public bool isBoss;
+    public bool isBoss = false;
 
     // Start is called before the first frame update
 
