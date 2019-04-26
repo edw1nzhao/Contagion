@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
     private int startHealth = Globals.PLAYER_START_HP;
     private int currHealth;
     private int currMaxHealth;
+
 
     public Slider healthSlider;
     public Text healthText;
@@ -26,11 +28,24 @@ public class PlayerHealth : MonoBehaviour {
 
 
     void Update() {
+
         if (currTime > second) {
 
             currTime = 0;
         } else {
             currTime += Time.deltaTime;
+        }
+
+        if (currHealth <= 0)
+        {
+            if (SceneManager.GetActiveScene().name.Equals("Dungeon"))
+            {
+                SceneManager.LoadScene("Dungeon", UnityEngine.SceneManagement.LoadSceneMode.Single);
+            }
+            else if (SceneManager.GetActiveScene().name.Equals("Dungeon Boss"))
+            {
+                SceneManager.LoadScene("Dungeon Boss", UnityEngine.SceneManagement.LoadSceneMode.Single);
+            }
         }
     }
 
