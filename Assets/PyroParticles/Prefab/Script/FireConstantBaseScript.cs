@@ -86,7 +86,7 @@ namespace DigitalRuby.PyroParticles
         void OnCollisionEnter(Collision col){
             if(col.gameObject.tag == "Enemy"){
 
-                float dmg = GM.mgr_spells.calculateDamage("FFEE");
+                float dmg = GM.mgr_spells.calculateDamage("FE");
                 col.gameObject.GetComponent<MonsterAI>().health -= dmg;
             }
         }

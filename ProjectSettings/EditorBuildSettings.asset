@@ -8,19 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LabMenu.unity
     guid: ccab5807dd4046c49a6b8fd0b4effedf
   - enabled: 0
-    path: Assets/Scenes/Main.unity
-    guid: 67adac43bcf286444be612074ab04f75
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Town.unity
     guid: 42a32060a6b0049d28d6a1bd09a45387
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lab.unity
     guid: 71c2d5dd5447f4ec993d701124b435f5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeon.unity
     guid: 78dbcba86f7540e4dac4677eb677acf5
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Boss.unity
+    guid: 6c5aa1469c4aab24aaa60689ba67d2df
   m_configObjects: {}

@@ -28,7 +28,7 @@ public class RedTileTrigger : MonoBehaviour
             count++;
             if (count == 4)
             {
-                Debug.Log("--------All Set!!!--------");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Dungeon Boss", UnityEngine.SceneManagement.LoadSceneMode.Single);
             }
         }
     }

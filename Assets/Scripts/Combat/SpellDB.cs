@@ -23,8 +23,8 @@ public class SpellDB : MonoBehaviour
 
     Dictionary<string, Spell> spellDB = 
     new Dictionary<string, Spell>(){
-        {"FFF", new Spell("FFF", "castFireBall", 30, 30)},
-        {"FFEE", new Spell("FFEE", "castFireWall", 30, 30)},
+        {"FF", new Spell("FF", "castFireBall", 30, 30)},
+        {"FE", new Spell("FE", "castFireWall", 30, 30)},
         {"WW",new Spell("WW","castWaterBubble",5,20)},
         {"EE",new Spell("EE","castRollingRock",30,30)}
     };
