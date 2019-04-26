@@ -5,6 +5,7 @@ using UnityEngine;
 public class RedTileTrigger : MonoBehaviour
 {
     static int count = 0;
+    public GameObject[] rewards;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,11 @@ public class RedTileTrigger : MonoBehaviour
             count++;
             if (count == 4)
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Dungeon Boss", UnityEngine.SceneManagement.LoadSceneMode.Single);
+                for (int i = 0; i < rewards.Length; i++)
+                {
+                    rewards[i].SetActive(true);
+                }
+
             }
         }
     }
